@@ -1,0 +1,60 @@
+//colors
+$colorWhite: #FFFFFF;
+$colorBlack: #000;
+$colorGreenBright: #B0FE76;
+$colorDark: #222823;
+$colorGreenLight: #CCFCCB;
+$colorDarkViolet: #6667AB;
+$colorOrange: #F2C94C;
+//sizes
+$sizeContainerLarge: 1920px;
+$sizeContainer: 1440px;
+$sizeExtraLarge: 1200px;
+$sizeLarge: 950px;
+$sizeMedium: 650px;
+$sizeSmall: 576px;
+
+$shadowLarge: 0 0 8px .2px rgba(49, 53, 63, 0.6);
+$shadowLittle: 0 0 5px .2px rgba(49, 53, 63, 0.5);
+
+@mixin fontStyle($size: 16px, $height: 20px, $weight: 400, $color: $colorDark){
+	font-size: $size;
+	line-height: $height;
+	font-weight: $weight;
+	color: $color;
+}
+
+@mixin width-height($width, $height: $width){
+	width: $width;
+	height: $height;
+}
+
+@mixin borderStyle ($border, $borderRadius){
+	border: $border;
+	border-radius: $borderRadius;
+}
+
+@mixin flex-grid ($display, $direction, $justify, $align){
+	display: $display;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin blockCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin blockColumnCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@mixin textCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}

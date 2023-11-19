@@ -1,0 +1,42 @@
+@import '../../../styles/variables';
+@import '../../ui/Button/style.module.scss';
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	&__navigation {
+
+	}
+	&__auth {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.navigation {
+	&__list {
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+	&__submenu {
+		display: none;
+		position: absolute;
+		width: 100px;
+	}
+	&__item {
+		&:last-child {
+			&:hover {
+				&>.navigation__submenu {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.auth {
+	&__button {
+		@extend .button_icon;
+	}
+}
