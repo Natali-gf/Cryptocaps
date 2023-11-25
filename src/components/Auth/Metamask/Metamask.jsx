@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import s from './style.module.scss';
 import cn from 'classnames';
-import logoMetamask from '../../../assets/temp/images/icons8-метамаска-логотип-48 1.png';
-import Button from '../../ui/Button/Button';
+import logoMetamask from '../../../assets/images/metamask.png';
+import Button from '../../ui/buttons/Button/Button';
 import { MetaMaskProvider, useSDK } from '@metamask/sdk-react';
 
 function Metamask({className}) {

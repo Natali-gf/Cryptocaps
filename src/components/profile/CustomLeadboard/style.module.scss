@@ -1,0 +1,33 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables';
+
+.leaderboard {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 5%;
+	&__tabs {
+		display: flex;
+		gap: 20px;
+		height: 35px;
+		margin-bottom: 60px;
+	}
+	&__tab {
+		width: 328px;
+		@include flex-grid(flex, null, center, flex-start);
+		@include fontStyle(24px, 600);
+		height: 45px;
+		padding: 5px 12px;
+		cursor: pointer;
+		@include themed() {
+			color: t('textMain');
+		}
+		&_active {
+			@include themed() {
+				color: t('bgBtnMain');
+				border-bottom: 1px solid t('bgBtnMain');
+			}
+		}
+	}
+}

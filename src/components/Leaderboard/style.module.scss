@@ -1,0 +1,75 @@
+@use '../../styles/styles.scss' as *;
+@import '../../styles/variables.scss';
+
+.leaderboard {
+	width: 100%;
+	height: fit-content;
+	padding: 64.5px 37.5px;
+	border: 1px solid $colorPurple700;
+	border-radius: 24px;
+	@include themed() {
+		color: t('textMain');
+		background-color: t('bgSidebar')
+	}
+	&__title {
+		@include fontStyle(36px, 700, 43px);
+		text-align: center;
+		padding: 0 0 24px;
+	}
+}
+
+.table {
+	width: 100%;
+	&__body {
+	}
+	&__column {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		&:nth-child(1) {
+			grid-area: num;
+		}
+		&:nth-child(2) {
+			grid-area: xp;
+		}
+		&:nth-child(3) {
+			grid-area: user;
+			justify-content: end;
+		}
+		&_head {
+			@include fontStyle(18px, 700, 36px);
+			display: flex;
+			width: 100%;
+			&:nth-child(3) {
+				justify-content: center;
+			}
+		}
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: 30px 1fr 80px 1fr 200px;
+		grid-template-rows: 44px;
+		grid-template-areas:
+			'num . xp . user';
+		height: 44px;
+		align-items: center;
+	}
+}
+
+.user {
+	@include blockCenter;
+	gap: 10px;
+	&__name {
+		max-width: 170px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&__avatar {
+		&_img {
+			display: block;
+			@include width-height(24px);
+			border-radius: 50%;
+		}
+	}
+}

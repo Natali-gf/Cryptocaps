@@ -1,0 +1,11 @@
+@use '../../../../styles/styles.scss' as *;
+// @import '../../../../styles/variables.scss';
+
+.block {
+	border-radius: 24px;
+	@include themed() {
+		border: 1px solid t('borderMain');
+		color: t('textMain');
+		background-color: t('textMainBack');
+	}
+}

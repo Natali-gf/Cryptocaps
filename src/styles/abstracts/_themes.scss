@@ -3,16 +3,41 @@
 
 $themes: (
   light: (
+    bg: $bgLight,
+    bgNoise: $bgNoiseLight,
+    textAccent: $colorPurple400,
+    borderMain: $colorPurple200,
+    bgBtnMain: $colorPurple400,
+    bgBtnMainBack: $colorGreen200,
+    bgBtnScnd: $colorTertiaryGreen100,
     textMain: $colorBlack,
-    textSecondary: $colorGreenBright,
-    bgMain: $colorWhite,
+    textMainBack: $colorWhite,
+    textBlack: $colorBlack,
+    btnBgDisabled: $colorGrey400,
+    btnTextDisabled: $colorGrey700,
 
+    // bgMain: $colorGreyDark100,
+
+    bgRange: $colorWhite,
   ),
   dark: (
+    bg: $bgDark,
+    bgNoise: $bgNoiseDark,
+    textAccent: $colorGreen100,
+    borderMain: $colorGreen150,
+    bgBtnMain: $colorGreen100,
+    bgBtnMainBack: $colorPurple400,
+    bgBtnScnd: $colorPurple200,
     textMain: $colorWhite,
-    textSecondary: $colorWhite,
-		bgMain: $colorDark,
+    textMainBack: $colorBlack,
+    textBlack: $colorGrey700,
+    btnBgDisabled: $colorGrey200,
+    btnTextDisabled: $colorGrey600,
 
+    // bgMain: $colorOliveDark700,
+
+    // bgButtonProfile: $colorJadeLight500,
+    bgRange: $colorWhite,
   ),
 );
 

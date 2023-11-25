@@ -1,11 +1,69 @@
 //colors
-$colorWhite: #FFFFFF;
-$colorBlack: #000;
-$colorGreenBright: #B0FE76;
-$colorDark: #222823;
-$colorGreenLight: #CCFCCB;
-$colorDarkViolet: #6667AB;
-$colorOrange: #F2C94C;
+$colorWhite: #ffffff;
+$colorBlack: #0e120f;
+$bgDark: #222823;
+$bgLight: #d7d7ec;
+
+$colorGreen100: #b0fe76;
+$colorGreen150: #b0fe7680;
+$colorGreen200: #83d62c;
+$colorGreen300: #68ac21;
+$colorGreen400: #4e8317;
+$colorGreen500: #365d0d;
+$colorGreen600: #1f3905;
+$colorGreen700: #0a1801;
+
+$colorTertiaryGreen100: #ccfccb;
+$colorTertiaryGreen200: #60e15b;
+$colorTertiaryGreen300: #4cb648;
+$colorTertiaryGreen400: #398c36;
+$colorTertiaryGreen500: #276524;
+$colorTertiaryGreen600: #164014;
+$colorTertiaryGreen700: #071e06;
+
+$colorQuaternaryGreen100: #d6f9e5;
+$colorQuaternaryGreen200: #8addb1;
+$colorQuaternaryGreen300: #6fb38f;
+$colorQuaternaryGreen400: #558b6e;
+$colorQuaternaryGreen500: #3c654f;
+$colorQuaternaryGreen600: #254132;
+$colorQuaternaryGreen700: #102017;
+
+$colorPurple100: #f0ebfe;
+$colorPurple200: #cebdfb;
+$colorPurple300: #ae8cf9;
+$colorPurple400: #9256f5;
+$colorPurple500: #731dd8;
+$colorPurple600: #490f8d;
+$colorPurple700: #230449;
+
+$colorGrey100: #fbfcfc;
+$colorGrey200: #cdd5d5;
+$colorGrey300: #a7adad;
+$colorGrey400: #828787;
+$colorGrey500: #5f6363;
+$colorGrey600: #3f4141;
+$colorGrey700: #212222;
+
+$colorRed100: #fbdbdc;
+$colorRed200: #f7a5aa;
+$colorRed300: #f46572;
+$colorRed400: #d52941;
+$colorRed500: #971a2b;
+$colorRed600: #5d0c17;
+$colorRed700: #2a0306;
+
+$colorOrange100: #ffeeda;
+$colorOrange200: #ffbf00;
+$colorOrange300: #ce9a00;
+$colorOrange400: #a07700;
+$colorOrange500: #745500;
+$colorOrange600: #4b3500;
+$colorOrange700: #251900;
+
+$colorSocialTwitter: #1da1f2;
+$colorSocialDiscord: #7289da;
+
 //sizes
 $sizeContainerLarge: 1920px;
 $sizeContainer: 1440px;
@@ -14,27 +72,37 @@ $sizeLarge: 950px;
 $sizeMedium: 650px;
 $sizeSmall: 576px;
 
-$shadowLarge: 0 0 8px .2px rgba(49, 53, 63, 0.6);
-$shadowLittle: 0 0 5px .2px rgba(49, 53, 63, 0.5);
+$bgNoiseDark: url(../../assets/images/noise_dark.png);
+$bgNoiseLight: url(../../assets/images/noise_light.png);
+$shadowLarge: 0 0 8px 0.2px rgba(49, 53, 63, 0.6);
+$shadowLittle: 0 0 5px 0.2px rgba(49, 53, 63, 0.5);
 
-@mixin fontStyle($size: 16px, $height: 20px, $weight: 400, $color: $colorDark){
+@mixin fontStyle($size: 16px, $weight: 400, $height: normal) {
 	font-size: $size;
-	line-height: $height;
 	font-weight: $weight;
-	color: $color;
+	line-height: $height;
 }
 
-@mixin width-height($width, $height: $width){
+@mixin fontSyncrone() {
+	font-family: 'Syncrone', 'HubotExpanded', 'Hubot', Tahoma, Geneva, Verdana,
+		sans-serif;
+}
+
+@mixin fontHubot() {
+	font-family: 'Hubot', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@mixin width-height($width, $height: $width) {
 	width: $width;
 	height: $height;
 }
 
-@mixin borderStyle ($border, $borderRadius){
+@mixin borderStyle($border, $borderRadius) {
 	border: $border;
 	border-radius: $borderRadius;
 }
 
-@mixin flex-grid ($display, $direction, $justify, $align){
+@mixin flex-grid($display, $direction, $justify, $align) {
 	display: $display;
 	flex-direction: $direction;
 	justify-content: $justify;

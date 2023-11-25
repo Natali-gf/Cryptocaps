@@ -1,0 +1,30 @@
+@use '../../styles/styles.scss' as *;
+@import '../../styles/variables.scss';
+
+.switch {
+	@include width-height(209px, 71px);
+	display: flex;
+	align-items: center;
+	@include themed() {
+		background-color: t('bg');
+		color: t('textMain');
+	}
+	padding: 8px;
+	border-radius: 24px;
+	&__button {
+		@include themed() {
+			background-color: t('bg');
+			color: t('textMain');
+		}
+		@include fontStyle(14px, 500);
+		background-color: transparent;
+		padding: 18px 26px;
+		&_active {
+			@include themed() {
+				background-color: t('bgBtnMain');
+				color: t('textMainBack');
+			}
+			border-radius: 20px;
+		}
+	}
+}

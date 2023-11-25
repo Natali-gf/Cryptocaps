@@ -1,0 +1,21 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: 30px;
+	@include themed() {
+		background: t('bgNoise'), t('bg');
+	}
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		position: relative;
+		max-width: $sizeContainer;
+		width: 100%;
+		min-height: 100vh;
+	}
+}

@@ -1,0 +1,109 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.userData {
+	display: grid;
+	grid-template-columns: 96px 1fr;
+	grid-template-rows: 41px 41px 36px;
+	gap: 14px;
+	grid-template-areas:
+		'ava nik'
+		'ava lvl'
+		'xp  xp';
+	width: 100%;
+	&_sidebar {
+		grid-template-columns: 1fr 70px;
+		grid-template-rows: 74px 30px 36px;
+		gap: 0;
+		grid-template-areas:
+			'ava ava'
+			'nik lvl'
+			'xp  xp';
+		@include fontStyle(18px, 500);
+	}
+
+	&__avatar {
+		grid-area: ava;
+		@include width-height(96px);
+		background-image: url(../../../assets/images/no_user_photo.png);
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		&>img {
+			display: block;
+			@include width-height(96px);
+			border-radius: 50%;
+		}
+		&_sidebar {
+			@include width-height(74px);
+			margin: auto;
+			&>img {
+				@include width-height(74px);
+			}
+		}
+	}
+	&__nik {
+		grid-area: nik;
+		max-width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include themed() {
+			color: t('textMain');
+		}
+		justify-self: end;
+		@include fontStyle(24px, 700);
+
+		&_sidebar {
+			justify-self: start;
+			align-self: end;
+			@include fontStyle(18px, 500);
+		}
+	}
+	&__lvl {
+		grid-area: lvl;
+		justify-self: end;
+		@include themed() {
+			color: t('textMain');
+		}
+		@include fontStyle(18px, 700);
+		&_sidebar {
+			align-self: end;
+			font-weight: 500;
+		}
+	}
+	&__range {
+		grid-area: xp;
+		display: flex;
+		align-items: center;
+		border-radius: 10px;
+		&_lvl {
+			display: flex;
+			background-color: $colorGrey200;
+			@include width-height(100%, 8px);
+			border-radius: 20px;
+			margin: 5px 0;
+			&_xp {
+				height: 8px;
+				border-radius: 20px 0 0 20px;
+				@include themed() {
+					background-color: t('bgBtnMainBack');
+				}
+			}
+			&_bar {
+				@include width-height(4px, 18px);
+				margin-top: -5px;
+				@include themed() {
+					background-color: t('bgBtnScnd');
+				}
+			}
+		}
+		&_current {
+			margin-right: 12px;
+			@include fontStyle(18px, 700);
+		}
+		&_next {
+			margin-left: 12px;
+			@include fontStyle(18px, 700);
+		}
+	}
+}

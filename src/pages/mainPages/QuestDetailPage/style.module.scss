@@ -1,0 +1,132 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 70px;
+	&__mainBlock {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+	&__secondaryBlock {
+		display: grid;
+		grid-template-columns: 2.2fr 1fr;
+		gap: 20px;
+	}
+}
+.quest {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-end;
+	justify-content: space-between;
+	height: 380px;
+	padding: 30px 45px;
+	border-radius: 0 0 56px 56px;
+	&__xp {
+		padding: 7px 24px;
+	}
+	&__company {
+		align-self: flex-start;
+		position: absolute;
+	}
+
+}
+
+.company {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	&__avatar {
+		&>img {
+			@include width-height(48px);
+			border-radius: 50%;
+		}
+	}
+	&__name {
+		@include fontStyle(24px, 900);
+		color: $colorWhite;
+	}
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	&__questValues {
+		display: flex;
+		gap: 42px;
+	}
+}
+
+.questPart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 44px;
+}
+
+.infoPart {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	&__user {
+		padding: 19px 63px;
+	}
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	padding: 23px 58px;
+	&__title {
+		@include fontStyle(64px, 700, 77px);
+		margin-bottom: 24px;
+		max-width: 570px
+	}
+	&__subtitle {
+		@include fontStyle(24px, 700, 36px);
+		margin-bottom: 4px;
+	}
+	&__text {
+		@include fontStyle(18px, 400, 36px);
+	}
+	&__date {
+		display: flex;
+		position: absolute;
+		align-self: flex-end;
+		padding: 15px;
+	}
+}
+
+.date {
+	display: flex;
+	align-items: center;
+	@include fontStyle(15px, 700, 18px);
+	&_start {
+	}
+	&_end {
+		@include themed() {
+			color: t('bgBtnMain');
+		}
+		&::before {
+			font-size: 7.75px;
+			margin: 0 10px;
+			@include themed() {
+				color: t('textMain');
+			}
+		}
+	}
+}
+
+.detail {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 52px;
+	padding: 36px;
+}

@@ -1,0 +1,16 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables';
+@import '../CustomLeadboard/style.module.scss';
+
+.quests {
+	@extend .leaderboard;
+	&__tabs {
+		@extend .leaderboard__tabs;
+	}
+	&__tab {
+		@extend .leaderboard__tab;
+		&_active {
+			@extend .leaderboard__tab_active;
+		}
+	}
+}

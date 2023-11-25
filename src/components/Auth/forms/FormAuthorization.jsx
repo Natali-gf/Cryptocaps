@@ -4,7 +4,7 @@ import Input from '../../ui/Input/Input';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/buttons/Button/Button";
 import CheckboxGroup from "../../ui/Checkbox/Checkbox";
 
 const FormAuthorization = ({}) => {

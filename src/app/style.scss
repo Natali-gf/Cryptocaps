@@ -1,0 +1,17 @@
+@use '../styles/styles.scss' as *;
+@import '../styles/reset.scss';
+@import '../styles/fonts.scss';
+@import '../styles/variables.scss';
+@import '../styles/iconsFont';
+
+* {
+	font-family: 'HubotExpanded', 'Hubot', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+}
+
+// body {
+// 	height: 100%;
+// 	width: 100%;
+// }

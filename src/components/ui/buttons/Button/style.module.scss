@@ -1,0 +1,16 @@
+@use '../../../../styles/styles.scss' as *;
+// @import '../../../../styles/variables.scss';
+
+.button {
+	cursor: pointer;
+	&_icon {
+		@extend .button;
+		background-color: transparent;
+	}
+	&:disabled {
+		@include themed() {
+			background-color: t('btnBgDisabled');
+			color: t('btnTextDisabled');
+		}
+	}
+}

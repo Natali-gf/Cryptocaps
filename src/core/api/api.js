@@ -1,10 +1,11 @@
 import axios from 'axios';
 
+export const baseUrl = 'http://localhost:4000';
 export default axios.create({
-    baseURL: 'http://localhost:4000',
+    baseURL: baseUrl,
 
     headers: { 'accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `${localStorage.getItem('authorizationToken')}`
+                // 'Authorization': `${localStorage.getItem('authorizationToken')}`
              },
 });

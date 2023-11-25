@@ -1,0 +1,24 @@
+@use '../../styles/styles.scss' as *;
+@import '../../styles/variables.scss';
+
+.sidebar {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
+	max-width: 300px;
+	width: 100%;
+	height: 100vh;
+	position: sticky;
+	top: 0;
+	padding: 45px 24px;
+	@include themed() {
+		background-color: t('textMainBack');
+		border-right: 1px solid t('borderMain');
+	}
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+}

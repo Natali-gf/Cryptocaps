@@ -1,0 +1,76 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.sidebar {
+	&__container {
+		width: 100%;
+		// height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		padding: 0 16px 80px;
+	}
+
+	&__title {
+		@include fontSyncrone;
+		text-transform: uppercase;
+		font-size: 32px;
+		@include themed() {
+			color: t('bgBtnMainBack');
+		}
+	}
+	&__theme {
+		margin: 40px 0;
+	}
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 40px;
+	&__chapter {
+	}
+}
+
+.chapter {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	font-size: 32px;
+	@include fontStyle(24px, 600);
+	@include themed() {
+		color: t('bgBtnMain');
+	}
+	&__title {
+		@include fontStyle(24px, 600);
+		@include themed() {
+			color: t('bgBtnMain');
+		}
+	}
+	&__link {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		height: 32px;
+		@include fontStyle(20px, 400, 24px);
+		@include themed() {
+			color: t('textMain');
+		}
+		&_active {
+			@include themed() {
+				color: t('bgBtnMain');
+			}
+			margin-left: 16px;
+			display: flex;
+			justify-content: space-between;
+			&::after {
+				@include themed() {
+					color: t('bgBtnMain');
+					rotate: 270deg;
+				}
+			}
+		}
+	}
+}

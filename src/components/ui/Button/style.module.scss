@@ -1,9 +1,0 @@
-@import '../../../styles/variables.scss';
-
-.button {
-	cursor: pointer;
-	&_icon {
-		@extend .button;
-		background-color: transparent;
-	}
-}

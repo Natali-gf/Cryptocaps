@@ -1,0 +1,106 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.select {
+  @include width-height(100%);
+// [class$='-container'] {
+	// @include width-height(100%);
+  // position: relative;
+  // display: flex;
+  // flex-direction: column;
+	[class$='control'] {
+		width: 100%;
+		@include width-height(100%, 48px);
+		background-color: #222823;
+    border-radius: 24px;
+    border: none;
+    padding: 0 20px;
+    box-shadow: none;
+    // &::after {
+    //   content: url(../../../assets/icons/arrow_down_white.svg);
+    // }
+    &:hover, &:focus, &:active,
+    [class$='--is-focused'] {
+      border: none;
+    }
+    // [class$='control--menu-is-open'] {
+    //   &::after {
+    //     rotate: 180deg;
+    //   }
+    // }
+    [class$='value-container'] {
+      padding: 0;
+      [class$='singleValue'] {
+        font-size: 14px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: $colorWhite;
+        padding: 0;
+        white-space: nowrap;
+      }
+      [class$='placeholder'] {
+        font-size: 14px;
+        color: $colorWhite;
+        padding: 0;
+        white-space: nowrap;
+      }
+    }
+    [class$='IndicatorsContainer'] {
+      [class$='indicatorSeparator'] {
+        display: none;
+      }
+      [class$='indicatorContainer'] {
+        display: flex;
+        align-items: center;
+        &::after {
+          content: url(../../../assets/icons/arrow_down_white.svg);
+          height: 24px;
+        }
+        &>svg {
+          display: none;
+        }
+      }
+    }
+	}
+
+  [class$='open'] {
+    &::after {
+      content: url(../../../assets/icons/arrow.svg);
+      rotate: 180deg;
+    }
+  }
+
+
+  [class$='-menu'] {
+    // position: relative;
+    // top: 50px;
+    // border-radius: 8px;
+    // padding: 8px;
+    // position: relative;
+    // z-index: 100;
+    width: 100%;
+    padding: 16px;
+    border-radius: 24px;
+    // border: 1px solid $colorGreen500;
+    background-color: #222823;
+    [class$='-menuList'] {
+      // display: flex;
+      // flex-direction: column;
+      // max-height: 314px;
+      // gap: 12px 0;
+      width: 100%;
+      [class$='-option'] {
+        // display: flex;
+        // align-items: center;
+        // height: 24px;
+        // margin: 6px 12px;
+        width: 100%;
+        // &:hover,
+        [class$='--is-selected'] {
+          // background-color: $colorGreyDark100;
+        }
+      }
+    }
+  }
+}

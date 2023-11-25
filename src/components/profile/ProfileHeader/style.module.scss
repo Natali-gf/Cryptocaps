@@ -1,0 +1,32 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables';
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	&__homeBtn {
+		align-self: flex-end;
+		@include fontStyle(24px, 500);
+		padding: 16px 66px;
+		border-radius: 24px;
+		margin-bottom: 10px;
+		@include themed() {
+			color: t('textMain');
+			background-color: t('bgBtnMainBack');
+		}
+	}
+	&__headings {
+		display: flex;
+		margin-bottom: 30px;
+		@include themed() {
+			color: t('textMain');
+		}
+	}
+	&__title {
+		@include fontStyle(40px, 600);
+		@include themed() {
+			color: t('textMain');
+		}
+	}
+}

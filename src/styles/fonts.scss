@@ -1,41 +1,117 @@
 @font-face {
+	font-family: 'Syncrone';
+	src: url('../assets/fonts/Syncrone.ttf');
+}
+
+@font-face {
 	font-family: 'Hubot';
-	src: url('../assets/fonts/HubotSans-Light.ttf');
+	src: local('HubotSans-Light'),
+		url('../assets/fonts/HubotSans-Light.woff2') format('woff2'),
+		url('../assets/fonts/HubotSans-Light.ttf') format('truetype');
 	font-weight: 300;
 }
 
 @font-face {
 	font-family: 'Hubot';
-	src: url('../assets/fonts/HubotSans-Regular.ttf');
+	src: local('HubotSans-Regular'),
+		url('../assets/fonts/HubotSans-Regular.woff2') format('woff2'),
+		url('../assets/fonts/HubotSans-Regular.ttf') format('truetype');
 	font-weight: 400;
 }
 
 @font-face {
 	font-family: 'Hubot';
-	src: url('../assets/fonts/HubotSans-Medium.ttf');
+	src: local('HubotSans-Medium'),
+		url('../assets/fonts/HubotSans-Medium.woff2') format('woff2'),
+		url('../assets/fonts/HubotSans-Medium.ttf') format('truetype');
 	font-weight: 500;
 }
 
 @font-face {
 	font-family: 'Hubot';
-	src: url('../assets/fonts/HubotSans-SemiBold.ttf');
+	src: local('HubotSans-SemiBold'),
+		url('../assets/fonts/HubotSans-SemiBold.woff2') format('woff2'),
+		url('../assets/fonts/HubotSans-SemiBold.ttf') format('truetype');
 	font-weight: 600;
 }
 
 @font-face {
 	font-family: 'Hubot';
-	src: url('../assets/fonts/HubotSans-Bold.ttf');
+	src: local('HubotSans-Bold'),
+		url('../assets/fonts/HubotSans-Bold.woff2') format('woff2'),
+		url('../assets/fonts/HubotSans-Bold.ttf') format('truetype');
 	font-weight: 700;
 }
 
 @font-face {
 	font-family: 'Hubot';
-	src: url('../assets/fonts/HubotSans-ExtraBold.ttf');
+	src: local('HubotSans-ExtraBold'),
+		url('../assets/fonts/HubotSans-ExtraBold.woff2') format('woff2'),
+		url('../assets/fonts/HubotSans-ExtraBold.ttf') format('truetype');
 	font-weight: 800;
 }
 
 @font-face {
 	font-family: 'Hubot';
-	src: url('../assets/fonts/HubotSans-Black.ttf');
+	src: local('HubotSans-Black'),
+		url('../assets/fonts/HubotSans-Black.woff2') format('woff2'),
+		url('../assets/fonts/HubotSans-Black.ttf') format('truetype');
+	font-weight: 900;
+}
+
+//* Hubot-Expanded
+@font-face {
+	font-family: 'HubotExpanded';
+	src: local('HubotSansExpanded-Light'),
+		url('../assets/fonts/HubotSansExpanded-Light.woff2') format('woff2'),
+		url('../assets/fonts/HubotSansExpanded-Light.ttf') format('truetype');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'HubotExpanded';
+	src: local('HubotSansExpanded-Regular'),
+		url('../assets/fonts/HubotSansExpanded-Regular.woff2') format('woff2'),
+		url('../assets/fonts/HubotSansExpanded-Regular.ttf') format('truetype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'HubotExpanded';
+	src: local('HubotSansExpanded-Medium'),
+		url('../assets/fonts/HubotSansExpanded-Medium.woff2') format('woff2'),
+		url('../assets/fonts/HubotSansExpanded-Medium.ttf') format('truetype');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'HubotExpanded';
+	src: local('HubotSansExpanded-SemiBold'),
+		url('../assets/fonts/HubotSansExpanded-SemiBold.woff2') format('woff2'),
+		url('../assets/fonts/HubotSansExpanded-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'HubotExpanded';
+	src: local('HubotSansExpanded-Bold'),
+		url('../assets/fonts/HubotSansExpanded-Bold.woff2') format('woff2'),
+		url('../assets/fonts/HubotSansExpanded-Bold.ttf') format('truetype');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'HubotExpanded';
+	src: local('HubotSansExpanded-ExtraBold'),
+		url('../assets/fonts/HubotSansExpanded-ExtraBold.woff2') format('woff2'),
+		url('../assets/fonts/HubotSansExpanded-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: 'HubotExpanded';
+	src: local('HubotSansExpanded-Black'),
+		url('../assets/fonts/HubotSansExpanded-Black.woff2') format('woff2'),
+		url('../assets/fonts/HubotSansExpanded-Black.ttf') format('truetype');
 	font-weight: 900;
 }

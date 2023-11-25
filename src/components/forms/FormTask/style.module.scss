@@ -1,0 +1,53 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(11, 128px);
+	padding: 0 7.5%;
+	border-radius: 24px;
+	@include themed() {
+		background-color: t('textMainBack');
+		border: 1px solid t('borderMain');
+	}
+	&__field {
+	}
+}
+
+.field {
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+	grid-template-rows: 128px;
+	grid-template-areas: 'title subtitle field tools .';
+	align-items: center;
+	// border-top: 1px solid $colorGreen600;
+	@include themed() {
+		color: t('textMain');
+	}
+	&__title {
+		grid-area: title;
+	}
+	&__subtitle {
+		grid-area: subtitle;
+		&>div {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+	&__tools {
+		grid-area: tools;
+	}
+	&__select {
+		grid-area: field;
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+	&__input {
+		grid-area: field;
+	}
+	&__title, &__subtitle {
+		@include fontStyle(24px, 600);
+	}
+}

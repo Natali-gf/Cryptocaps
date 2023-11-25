@@ -1,4 +1,4 @@
-import {useMemo, useRef} from 'react';
+import React, {useMemo, useRef} from 'react';
 import {useFrame} from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -10,6 +10,11 @@ export default function AnimationMesh({
 	colorizing,
 	anim: {init, update},
 }) {
+	const theme = localStorage.globalTheme;
+	React.useEffect(() => {
+
+	}, [theme])
+	console.log(theme)
 	let t = init;
 
 	const {positions, colors, normals} = useMemo(() => {
@@ -24,7 +29,7 @@ export default function AnimationMesh({
 				let z = positioning(x, y, t);
 				positions.push(x, y, z);
 
-				let color = colorizing(z);
+				let color = colorizing(z, theme);
 				colors.push(color.r, color.g, color.b);
 
 				normals.push(0, 0, 1);

@@ -1,0 +1,21 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+@import '../../ui/buttons/Button/style.module.scss';
+
+.logout {
+	@extend .button;
+	background-color: transparent;
+	@include fontStyle(16px, 700);
+	display: flex;
+	align-items: center;
+	@include themed() {
+		color: t('bgBtnMain');
+	}
+	&::before {
+		font-size: 24px;
+		margin-right: 8px;
+		@include themed() {
+			color: t('textMain');
+		}
+	}
+}

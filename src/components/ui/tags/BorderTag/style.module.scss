@@ -1,0 +1,14 @@
+@use '../../../../styles/styles.scss' as *;
+// @import '../../../../styles/variables.scss';
+
+.tag {
+	display: flex;
+	align-items: center;
+	border-radius: 24px;
+	padding: 0 20px;
+	@include fontStyle(12px, 500, 14px);
+	@include themed() {
+		border: 2px solid t('bgBtnMain');
+		color: t('textMain');
+	}
+}

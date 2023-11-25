@@ -7,10 +7,13 @@ import { store } from './core/store/store';
 import App from './app/App';
 import './index.css';
 import { MetaMaskProvider } from '@metamask/sdk-react';
+import { generateData } from './temporaryData/generateData';
+// import { setupStore } from './core/store/store';
 
+// const store = setupStore()
 const container = document.getElementById('root');
 const root = createRoot(container);
-
+generateData()
 root.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -29,4 +32,3 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
-

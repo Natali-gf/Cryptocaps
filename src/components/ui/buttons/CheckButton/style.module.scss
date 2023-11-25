@@ -1,0 +1,29 @@
+@use '../../../../styles/styles.scss' as *;
+@import '../../../../styles/variables.scss';
+
+.button {
+	width: 328px;
+	padding: 24px;
+	text-align: center;
+	@include fontStyle(20px, 500, 20px);
+	border-radius: 36px;
+	color: $colorBlack;
+	&_progress {
+		@include themed() {
+			color: t('textMainBack');
+			background-color: t('bgBtnMain');
+		}
+	}
+	&_done {
+		background-color: $colorQuaternaryGreen200;
+	}
+	&_verification {
+		background-color: $colorOrange100;
+	}
+	&_unauthorized {
+		background-color: $colorGrey200;
+	}
+	&_error {
+		background-color: $colorRed300;
+	}
+}
