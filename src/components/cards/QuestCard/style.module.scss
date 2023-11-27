@@ -1,18 +1,48 @@
 @use '../../../styles/styles.scss' as *;
 @import '../../../styles/variables.scss';
 
-.leaderboard {
-	width: 100%;
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 340px;
+	height: 415px;
 	height: fit-content;
-	padding: 24px 74px;
-	border: 1px solid $colorPurple700;
-	border-radius: 24px;
+	border-radius: 30px;
 	@include themed() {
 		color: t('textMain');
-		background-color: t('bgSidebar')
+		background: t('bgNoise'), t('bg');
+		border: 1px solid t('bgBtnMainBackQ');
+	}
+	&__img {
+		@include width-height(337px, 275px);
+		border-radius: 30px;
+		& > img {
+			display: block;
+			@include width-height(337px, 275px);
+			border-radius: 30px;
+		}
 	}
 	&__title {
-		@include fontStyle(26px, 700);
-		padding: 24px;
+		height: 96px;
+		@include fontStyle(20px, 600);
+		padding-top: 23px;
+		text-align: center;
+	}
+	&__awards {
+		height: 38px;
+		margin: 0  26px 6px;
+	}
+}
+
+.awards {
+	display: flex;
+	gap: 9px;
+	&__xp {
+		height: 100%;
+		padding: 0 8px;
+	}
+	&__nft {
+		background: url(../../../assets/icons/nft.svg);
+		@include width-height(36px);
 	}
 }

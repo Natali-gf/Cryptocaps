@@ -1,36 +1,41 @@
-@import '../../styles/variables';
+@use '../../styles/styles.scss' as *;
+@import '../../styles/variables.scss';
 
 .search {
-	// background-color: $strokeWhite;
 	@include flex-grid(flex, null, null, center);
 	@include width-height(460px, 38px);
-	// @include borderStyle(1px solid $strokeInitial, 16px);
-	padding: 0 42px;
-	&:hover{
-		// border-color: $strokeBlue;
-		.search__label {
-			// color: $iconBlue;
-		}
+	padding: 0 20px;
+	border-radius: 24px;
+	@include themed() {
+		border: 1px solid t('borderMain');
+		background-color: t('textMainBack');
 	}
-	&__label  {
+	&__label {
 		margin: 0 14px 0 0;
-		font-size: .75em;
+		font-size: 0.75em;
 		@include flex-grid(flex, null, null, center);
 		&::before {
 			padding-top: 1px;
 		}
 	}
 	&__input {
-		// @include textStyle(caption1, $textGrey);
+		@include themed() {
+			background-color: t('textMainBack');
+			color: t('textMain');
+		}
+		font-size: 14px;
 		outline: none;
 		border: none;
 		width: 100%;
-		&::placeholder{
-			// @include textStyle(caption1, $textGrey);
+		&::placeholder {
+
+			@include themed() {
+				color: t('textMain');
+			}
 		}
 	}
 	&__button {
-		font-size: .5em;
+		font-size: 0.5em;
 		padding: 8px;
 		border: none;
 		background: none;

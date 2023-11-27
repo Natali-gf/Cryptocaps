@@ -1,0 +1,31 @@
+@use '../../../../styles/styles.scss' as *;
+// @import '../../../../styles/variables.scss';
+
+.button {
+	cursor: pointer;
+	background-color: $colorGrey400;
+	width: fit-content;
+	@include blockCenter;
+	height: 70px;
+	gap: 10px;
+	border-radius: 24px;
+	padding: 10px;
+	&__logo {
+		&_app {
+			background: url(../../../../assets/icons/app_store.svg);
+			@include width-height(32px);
+		}
+		&_play {
+			background: url(../../../../assets/icons/google_play.svg);
+			@include width-height(32px);
+		}
+	}
+	&__title {
+		color: $colorWhite;
+		font-size: 24px;
+	}
+	&__subtitle {
+		color: $colorWhite;
+		font-size: 12px;
+	}
+}

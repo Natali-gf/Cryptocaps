@@ -6,11 +6,10 @@ export const questsApi = createApi({
 	baseQuery: fetchBaseQuery({baseUrl: baseUrl}),
 	endpoints: (build) => ({
 		fetchQuests: build.query({
-			query: (page = 1 ,limit = 11) => ({
+			query: (status) => ({
 				url: `/quests`,
 				params: {
-					_page: page,
-					_limit: limit,
+					status: status
 				}
 			})
 		}),
@@ -21,6 +20,50 @@ export const questsApi = createApi({
 					id: id,
 				}
 			})
-		})
+		}),
+		fetchQuestsBeginner: build.query({
+			query: (page = 1, limit = 2) => ({
+				url: `/quests`,
+				params: {
+					// _page: page,
+					// _limit: limit,
+					purpose: 2,
+					difficulty: 0,
+				}
+			})
+		}),
+		fetchQuestsFirst: build.query({
+			query: (page = 1, limit = 2) => ({
+				url: `/quests`,
+				params: {
+					// _page: page,
+					// _limit: limit,
+					purpose: 1,
+					difficulty: 0,
+				}
+			})
+		}),
+		fetchQuestsNext: build.query({
+			query: (page = 1, limit = 2) => ({
+				url: `/quests`,
+				params: {
+					// _page: page,
+					// _limit: limit,
+					purpose: 3,
+					difficulty: 1,
+				}
+			})
+		}),
+		fetchQuestsExplore: build.query({
+			query: (page = 1, limit = 2) => ({
+				url: `/quests`,
+				params: {
+					// _page: page,
+					// _limit: limit,
+					purpose: 4,
+					difficulty: 2,
+				}
+			})
+		}),
 	})
 })

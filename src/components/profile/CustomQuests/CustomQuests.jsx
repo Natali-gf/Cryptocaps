@@ -2,13 +2,15 @@ import React from 'react';
 import s from './style.module.scss';
 import cn from 'classnames';
 import Leaderboard from '../../Leaderboard/Leaderboard';
+import { questsApi } from '../../../core/store/services/questsApi';
 
 
 
 function CustomQuests({title, subtitle, className}) {
+	const {data} = questsApi.useFetchQuestsQuery('active')
 	const [customPeriod, setCustomPeriod] = React.useState(null);
 	const [activeTab, setActiveTab] = React.useState('finished');
-
+console.log(data)
 	function handleClick() {
 		setActiveTab(activeTab);
 	}
@@ -38,6 +40,7 @@ function CustomQuests({title, subtitle, className}) {
 					Archive
 				</div>
 			</div>
+
 			{/* <Leaderboard customPeriod={customPeriod} /> */}
 		</div>
 	);

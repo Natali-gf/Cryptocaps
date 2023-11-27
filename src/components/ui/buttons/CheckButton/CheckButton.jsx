@@ -6,7 +6,7 @@ import {QuestStep} from '../../../../core/constants/Quest';
 import {Link} from 'react-router-dom';
 
 function CheckButton({step, userWallets, requiredWallet, questSite}) {
-	
+
 	if (!userWallets) {
 		return (
 			<Link
@@ -19,7 +19,7 @@ function CheckButton({step, userWallets, requiredWallet, questSite}) {
 		return (
 			<Link
 				className={cn(s.button, s.button_progress)}
-				to={'/account/connect'}
+				to={'/account/user/connect'}
 				children={'Connect wallet'}
 			/>
 		);

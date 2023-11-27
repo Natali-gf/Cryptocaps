@@ -17,6 +17,7 @@ import QuestSteps from '../../../components/ui/tags/QuestSteps/QuestSteps';
 import TaskView from '../../../components/ui/tags/TaskView/TaskView';
 import CheckButton from '../../../components/ui/buttons/CheckButton/CheckButton';
 import UserData from '../../../components/profile/UserData/UserData';
+import mascot from '../../../assets/images/mascot.png';
 
 function QuestsDetailPage() {
 	const currentPath = useLocation().pathname;
@@ -44,7 +45,7 @@ function QuestsDetailPage() {
 					<div className={cn(s.content__mainBlock)}>
 						<div
 							className={cn(s.quest)}
-							style={{'background-image': `url(${quest.image})`}}>
+							style={{backgroundImage: `url(${quest.image})`}}>
 							<div className={cn(s.quest__company, s.company)}>
 								<div className={cn(s.company__avatar)}>
 									<img src={quest.companyAvatar} alt='' />
@@ -94,6 +95,9 @@ function QuestsDetailPage() {
 								questSite={quest.website}
 								userWallets={user[0].wallets}
 							/>
+							<div className={s.mascot}>
+								<img src={mascot} alt='mascot' />
+							</div>
 						</div>
 						<div className={s.infoPart}>
 							<BorderBlock className={s.infoPart__user}>

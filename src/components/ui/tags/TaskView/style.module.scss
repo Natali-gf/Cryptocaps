@@ -38,4 +38,22 @@
 	&__type {
 		@include fontStyle(18px, 500, 22px);
 	}
+	&__awards {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		&::before {
+			content: '';
+			background: url(../../../../assets/icons/lightning.svg);
+			width: 36px;
+			height: 36px;
+			background-repeat: no-repeat;
+			background-size: 36px;
+			display: block;
+		}
+		&_xp {
+			@include fontStyle(16px, 700, 20px);
+		}
+	}
 }

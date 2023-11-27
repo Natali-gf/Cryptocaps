@@ -2,19 +2,13 @@ import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
 import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
-import Logout from '../../Auth/Logout/Logout';
-import {useDispatch, useSelector} from 'react-redux';
-import {Status, StatusCode} from '../../../core/constants/Status';
 import NavigationLink from '../../ui/Navlink/Navlink';
-import {fetchUser} from '../../../core/store/slices/user';
 import UserData from '../../profile/UserData/UserData';
 import {userApi} from '../../../core/store/services/userApi';
 import BorderTag from '../../ui/tags/BorderTag/BorderTag';
 
 function ForUser() {
 	const {data: user} = userApi.useFetchUserQuery();
-	// const activeClass = ({isActive}) => (to === '/account/connect' ?
-	// 				cn(s.menu__item_active) : '');
 
 	return (
 		<div className={s.sidebar}>

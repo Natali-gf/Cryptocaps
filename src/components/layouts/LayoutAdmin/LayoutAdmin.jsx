@@ -8,7 +8,7 @@ import {Outlet} from 'react-router-dom';
 import AdminHeader from '../../adminPanel/ProfileHeader/AdminHeader';
 
 function LayoutAdmin() {
-	
+
 	return (
 		<div className={s.wrapper}>
 			<Sidebar isAdmin={true} />

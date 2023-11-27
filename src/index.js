@@ -13,7 +13,7 @@ import { generateData } from './temporaryData/generateData';
 // const store = setupStore()
 const container = document.getElementById('root');
 const root = createRoot(container);
-generateData()
+// generateData()
 root.render(
   <Provider store={store}>
     <BrowserRouter>

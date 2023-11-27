@@ -2,52 +2,194 @@
 @import '../../../styles/variables.scss';
 
 .form {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(11, 128px);
 	padding: 0 7.5%;
 	border-radius: 24px;
 	@include themed() {
 		background-color: t('textMainBack');
 		border: 1px solid t('borderMain');
 	}
-	&__field {
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		padding: 32px 0;
+	}
+	&__buttons {
+		display: flex;
+		justify-content: flex-end;
+		gap: 20px;
+		@include themed() {
+			border-top: 1px solid t('borderMain');
+		}
 	}
 }
 
 .field {
 	display: grid;
-	grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-	grid-template-rows: 128px;
-	grid-template-areas: 'title subtitle field tools .';
-	align-items: center;
-	// border-top: 1px solid $colorGreen600;
-	@include themed() {
-		color: t('textMain');
+	grid-template-rows: fit-content(48px);
+	grid-template-columns: 327px 561px 1fr;
+	grid-template-areas: 'title input .';
+	gap: 20px;
+	&_select {
+		grid-template-columns: 327px 328px 1fr;
+		grid-template-areas: 'title select .';
+	}
+	&_term {
+		grid-template-columns: 212px 96px 328px 213px 1fr;
+		row-gap: 16px;
+		grid-template-areas:
+			'title subDate date toolDate .'
+			'title subTime time toolTime .';
+	}
+	&_award {
+		grid-template-columns: 327px 96px 212px 213px 1fr;
+		row-gap: 16px;
+		grid-template-areas:
+			'title token inputT . 		 .'
+			'title nft 	 input  input  .'
+			'title point inputP . 		 .';
 	}
 	&__title {
-		grid-area: title;
+		@include fontStyle(24px, 600, 29px);
+		@include themed() {
+			color: t('textMain');
+		}
 	}
 	&__subtitle {
-		grid-area: subtitle;
-		&>div {
-			display: flex;
-			justify-content: flex-end;
+		justify-content: end;
+		@include fontStyle(20px, 400, 24px);
+		@include themed() {
+			color: t('textMain');
+		}
+		display: grid;
+		align-self: center;
+		&_date {
+			grid-area: subDate;
+		}
+		&_time {
+			grid-area: subTime;
+		}
+	}
+	&__input {
+		grid-area: input;
+		&_date {
+			grid-area: date;
+		}
+		&_time {
+			grid-area: time;
+		}
+		&_token {
+			grid-area: inputT;
+		}
+		&_nft {
+			grid-area: input;
+			& > input {
+				width: 212px;
+				height: 48px;
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+			}
+		}
+		&_points {
+			grid-area: inputP;
+		}
+	}
+	&__select {
+		grid-area: select;
+	}
+	&__check {
+		&_token {
+			grid-area: token;
+			align-self: center;
+		}
+		&_nft {
+			grid-area: nft;
+			align-self: center;
+		}
+		&_points {
+			grid-area: point;
+			align-self: center;
 		}
 	}
 	&__tools {
-		grid-area: tools;
-	}
-	&__select {
-		grid-area: field;
-		width: 100%;
 		display: flex;
 		align-items: center;
+		gap: 8px;
+		&_date {
+			grid-area: toolDate;
+		}
+		&_time {
+			grid-area: toolTime;
+		}
 	}
-	&__input {
-		grid-area: field;
+}
+
+.label {
+	display: flex;
+	gap: 20px;
+	height: 48px;
+	&__uploadButton {
+		@include blockCenter;
+		width: 212px;
+		border-radius: 24px;
+		@include fontStyle(14px, 600);
+		@include themed() {
+			background-color: t('bgBtnMainBack');
+			color: t('textMain');
+		}
 	}
-	&__title, &__subtitle {
-		@include fontStyle(24px, 600);
+	&__text {
+		@include themed() {
+			color: t('textMain');
+		}
+		@include blockCenter;
+		@include fontStyle(14px, 400);
+	}
+}
+
+.button {
+	&_submit {
+		@include fontStyle(20px, 500);
+		height: 62px;
+		margin: 40px 0;
+		&:nth-child(1) {
+			width: 212px;
+			background-color: transparent;
+			@include themed() {
+				color: t('bgBtnMain');
+			}
+		}
+		&:nth-child(2) {
+			width: 328px;
+			border-radius: 24px;
+			@include themed() {
+				color: t('textMainBack');
+				background-color: t('bgBtnMain');
+			}
+		}
+	}
+}
+
+.tools {
+	&__button {
+		@include fontStyle(14px, 600);
+		background-color: transparent;
+		@include themed() {
+			color: t('textMain');
+		}
+		&_date {
+			background-color: transparent;
+		}
+		&_time {
+			background-color: transparent;
+		}
+	}
+	&__separator {
+		width: 1px;
+		height: 10px;
+		@include themed() {
+			background-color: t('textMain');
+		}
 	}
 }

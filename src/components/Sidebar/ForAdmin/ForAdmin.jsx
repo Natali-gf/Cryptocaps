@@ -3,6 +3,7 @@ import cn from 'classnames';
 import s from './style.module.scss';
 import NavigationLink from '../../ui/Navlink/Navlink';
 import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
+import { Link } from 'react-router-dom';
 
 const menuOptions = [
 	{
@@ -37,7 +38,7 @@ function ForAdmin() {
 
 	return (
 		<div className={s.sidebar__container}>
-			<div className={s.sidebar__title}>Cryptocaps</div>
+			<Link to={'/'} className={s.sidebar__title}>Cryptocaps</Link>
 			<div className={s.menu}>
 				{menuOptions.map((item, index) => (
 					<div className={cn(s.menu__chapter, s.chapter)} key={index}>
