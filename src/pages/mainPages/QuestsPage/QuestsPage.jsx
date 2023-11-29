@@ -20,24 +20,19 @@ function QuestsPage() {
 	React.useEffect(() => {}, []);
 
 	return (
-		<>
-			<main className={cn(s.content)}>
-				<MainBoard />
-				{questsBeginner && (
-					<QuestsGroup
-						quests={questsBeginner}
-						title={'Styding for beginners'}
-					/>
-				)}
-				{questsFirst && (
-					<QuestsGroup quests={questsFirst} title={'First Adventure'} />
-				)}
-				{questsNext && <QuestsGroup quests={questsNext} title={'Next step'} />}
-				{questsExplore && (
-					<QuestsGroup quests={questsExplore} title={'Explore news'} />
-				)}
-			</main>
-		</>
+		<main className={cn(s.content)}>
+			<MainBoard />
+			{questsBeginner && (
+				<QuestsGroup quests={questsBeginner} title={'Styding for beginners'} />
+			)}
+			{questsFirst && (
+				<QuestsGroup quests={questsFirst} title={'First Adventure'} />
+			)}
+			{questsNext && <QuestsGroup quests={questsNext} title={'Next step'} />}
+			{questsExplore && (
+				<QuestsGroup quests={questsExplore} title={'Explore news'} />
+			)}
+		</main>
 	);
 }
 

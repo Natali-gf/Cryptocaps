@@ -27,7 +27,7 @@ export const questsApi = createApi({
 				params: {
 					// _page: page,
 					// _limit: limit,
-					purpose: 2,
+					purpose: 1,
 					difficulty: 0,
 				}
 			})
@@ -38,7 +38,7 @@ export const questsApi = createApi({
 				params: {
 					// _page: page,
 					// _limit: limit,
-					purpose: 1,
+					purpose: 2,
 					difficulty: 0,
 				}
 			})

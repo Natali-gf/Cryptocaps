@@ -32,6 +32,15 @@ export const userApi = createApi({
 					isAdmin: false,
 				}
 			})
-		})
+		}),
+		fetchUserQuests: build.query({
+			query: () => ({
+				url: `/users`,
+				params: {
+					id: '2',
+					// quests['isDone']: true
+				}
+			})
+		}),
 	})
 })

@@ -17,6 +17,7 @@
 	}
 }
 .quest {
+	position: relative;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -29,26 +30,46 @@
 	border-radius: 0 0 56px 56px;
 	&__xp {
 		padding: 7px 24px;
+		z-index: 2;
+	}
+	&__subs {
+		z-index: 2;
 	}
 	&__company {
 		align-self: flex-start;
 		position: absolute;
 	}
-
+	&__op {
+		@include themed() {
+			background: linear-gradient(t('imgGradient'), t('imgGradient'));
+		}
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 0 0 56px 56px;
+		z-index: 2;
+	}
 }
 
 .company {
 	display: flex;
 	align-items: center;
 	gap: 24px;
+	z-index: 5;
 	&__avatar {
-		&>img {
+		& > img {
 			@include width-height(48px);
 			border-radius: 50%;
 		}
 	}
 	&__name {
 		@include fontStyle(24px, 900);
+
+		@include themed() {
+			color: t('textMain');
+		}
 		color: $colorWhite;
 	}
 }
@@ -85,7 +106,7 @@
 	&__title {
 		@include fontStyle(64px, 700, 77px);
 		margin-bottom: 24px;
-		max-width: 570px
+		max-width: 570px;
 	}
 	&__subtitle {
 		@include fontStyle(24px, 700, 36px);
@@ -129,6 +150,7 @@
 	align-items: center;
 	gap: 52px;
 	padding: 36px;
+	background-color: rgba(112, 102, 102, 0.897);
 }
 
 .mascot {

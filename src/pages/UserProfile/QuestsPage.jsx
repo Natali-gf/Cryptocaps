@@ -13,7 +13,7 @@ function QuestsPage() {
 	return (
 		<main className={cn(s.wrapper__content, s.content)}>
 			<ProfileHeader title={'Quests'} />
-			<div className={s.content__main}>
+			<div className={s.content__quests}>
 				<CustomQuests />
 				<Clue />
 			</div>

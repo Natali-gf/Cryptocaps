@@ -6,6 +6,7 @@ import TasksPage from '../pages/AdminProfile/TasksPage';
 import HomePage from '../pages/mainPages/HomePage/HomePage';
 import QuestsDetailPage from '../pages/mainPages/QuestDetailPage/QuestsDetailPage';
 import QuestsPage from '../pages/mainPages/QuestsPage/QuestsPage';
+import SpacePage from '../pages/mainPages/SpacePage/SpacePage';
 import ConnectPage from '../pages/UserProfile/ConnectPage';
 import LeaderboardPage from '../pages/UserProfile/LeaderboardPage';
 import ProfilePage from '../pages/UserProfile/ProfilePage';
@@ -23,10 +24,10 @@ function App() {
 				<Route index element={<HomePage />} />
 				<Route path='quests' element={<QuestsPage />} />
 				<Route path='quests/detail/*' element={<QuestsDetailPage />} />
-				<Route path='/space' element={<HomePage />} />
-				<Route path='/web3' element={<HomePage />} />
-				<Route path='/swap' element={<HomePage />} />
-				<Route path='/bridge' element={<HomePage />} />
+				<Route path='/space' element={<SpacePage />} />
+				<Route path='/web3' element={<div />} />
+				<Route path='/swap' element={<div />} />
+				<Route path='/bridge' element={<div />} />
 			</Route>
 			<Route path='/account' element={<LayoutProfile />}>
 				<Route path='user/profile' element={<ProfilePage />} />

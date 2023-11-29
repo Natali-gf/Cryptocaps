@@ -12,13 +12,11 @@ const description = `If you're a beginner and don't know where to start, complet
 
 function QuestsGroup({quests, title}) {
 	const [page, setPage] = React.useState(0);
-	// const [ requestPage, setRequestPage ] = React.useState(1);
 	const pageSize = 2;
 	const endIndex = (page * pageSize) + pageSize;
 	const startIndex = endIndex - pageSize;
 	const questsToShow = quests.slice(startIndex, endIndex);
-
-	console.log(startIndex, endIndex);
+console.log(page)
 
 	return (
 		<BorderBlock className={s.quests}>
@@ -41,7 +39,6 @@ function QuestsGroup({quests, title}) {
 						<QuestCard
 							key={item.id}
 							quest={item}
-							// className={s.quests}
 							onClick={() => {
 								console.log(item.id);
 							}}

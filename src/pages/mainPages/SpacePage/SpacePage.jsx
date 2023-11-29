@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
 import MainBlock from '../../../components/mainParts/MainBlock/MainBlock';
+import MainBoard from './MainBoard';
 
 function SpacePage() {
 	// const [openedMenu, setOpenedMenu] = React.useState<boolean>(false);
@@ -13,7 +14,7 @@ function SpacePage() {
 	return (
 		<>
 			<main className={cn(s.content)}>
-				<MainBlock />
+				<MainBoard />
 			</main>
 		</>
 	);

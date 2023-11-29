@@ -8,9 +8,9 @@ function ProfileHeader({title, subtitle, className}) {
 			<Link className={s.header__homeBtn} to={'/'}>Home</Link>
 			<div className={s.header__headings}>
 				<div className={s.header__title}>{title}</div>
-				{subtitle &&
+				{/* {subtitle &&
 					<div className={s.header__subtitle}>{subtitle}</div>
-				}
+				} */}
 			</div>
 		</div>
 	);

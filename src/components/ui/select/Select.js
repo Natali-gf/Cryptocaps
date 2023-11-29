@@ -1,6 +1,5 @@
 import s from './style.module.scss';
-import Select from 'react-select'
-
+import Select from 'react-select';
 
 export default function CustomSelect(props) {
 

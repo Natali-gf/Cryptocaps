@@ -18,25 +18,37 @@ import TaskView from '../../../components/ui/tags/TaskView/TaskView';
 import CheckButton from '../../../components/ui/buttons/CheckButton/CheckButton';
 import UserData from '../../../components/profile/UserData/UserData';
 import mascot from '../../../assets/images/mascot.png';
+import {partnersApi} from '../../../core/store/services/partnersApi';
 
 function QuestsDetailPage() {
 	const currentPath = useLocation().pathname;
 	const currentQuestId = currentPath.match(/\/([^/]+)$/)[1];
 
-	const {data: user} = userApi.useFetchUserQuery();
-	const {data} = questsApi.useFetchQuestByIdQuery(currentQuestId);
 	const [quest, setQuest] = React.useState(null);
+	const [partner, setPartner] = React.useState(null);
+	const [partnerId, setPartnerId] = React.useState(null);
+
+	const {data: user} = userApi.useFetchUserQuery();
+	const {data: questbyId} = questsApi.useFetchQuestByIdQuery(currentQuestId);
+	const {data: partnerById} = partnersApi.useFetchPartnerByIdQuery(partnerId);
 
 	React.useEffect(() => {
-		if (data) {
-			const partsStartDate = data[0].dateStart.slice(0, 10).split('-');
-			const partsEndDate = data[0].dateEnd.slice(0, 10).split('-');
+		if (questbyId) {
+			const partsStartDate = questbyId[0].dateStart.slice(0, 10).split('-');
+			const partsEndDate = questbyId[0].dateEnd.slice(0, 10).split('-');
 			const dateStart = `${partsStartDate[2]}/${partsStartDate[1]}/${partsStartDate[0]}`;
 			const dateEnd = `${partsEndDate[2]}/${partsEndDate[1]}/${partsEndDate[0]}`;
-
-			setQuest({...data[0], dateStart: dateStart, dateEnd: dateEnd});
+			console.log(questbyId[0].idPartner);
+			setPartnerId(questbyId[0].idPartner);
+			setQuest({...questbyId[0], dateStart: dateStart, dateEnd: dateEnd});
 		}
-	}, [data]);
+	}, [questbyId]);
+
+	React.useEffect(() => {
+		if (partnerById) {
+			setPartner(partnerById[0]);
+		}
+	}, [partnerById]);
 
 	return (
 		<>
@@ -45,14 +57,19 @@ function QuestsDetailPage() {
 					<div className={cn(s.content__mainBlock)}>
 						<div
 							className={cn(s.quest)}
-							style={{backgroundImage: `url(${quest.image})`}}>
+							style={{
+								backgroundImage: `url(${quest.image})`,
+							}}>
+							<div className={cn(s.quest__op)}></div>
 							<div className={cn(s.quest__company, s.company)}>
 								<div className={cn(s.company__avatar)}>
-									<img src={quest.companyAvatar} alt='' />
+									{partner && <img src={partner.logo} alt={partner.name} />}
 								</div>
-								<div className={cn(s.company__name)}>{quest.companyName}</div>
+								{partner && (
+									<div className={cn(s.company__name)}>{partner.name}</div>
+								)}
 							</div>
-							<SubscribeButton isSubscribed={false} />
+							<SubscribeButton className={s.quest__subs} isSubscribed={false} />
 							<Experience className={s.quest__xp} children={quest.awards.xp} />
 						</div>
 						<div className={s.info}>
@@ -62,13 +79,15 @@ function QuestsDetailPage() {
 								<Difficulty level={quest.difficulty} />
 								<ChainType type={quest.chainType} />
 							</div>
-							<BorderTag
-								children={`${
-									quest.companyFollowers > 1000
-										? (quest.companyFollowers / 1000).toFixed(2) + 'k'
-										: quest.companyFollowers
-								} followers`}
-							/>
+							{partner && (
+								<BorderTag
+									children={`${
+										partner.followers > 1000
+											? (partner.followers / 1000).toFixed(2) + 'k'
+											: partner.followers
+									} followers`}
+								/>
+							)}
 						</div>
 					</div>
 					<div className={cn(s.content__secondaryBlock)}>

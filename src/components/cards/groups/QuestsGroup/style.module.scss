@@ -65,8 +65,12 @@
 			margin-bottom: 50px;
 			&:disabled {
 				@include themed() {
-					color: t('btnBgDisabled');
 					background-color: transparent;
+				}
+				&::before {
+					@include themed() {
+						color: t('btnBgDisabled');
+					}
 				}
 			}
 		}

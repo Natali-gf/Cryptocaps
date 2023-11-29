@@ -10,7 +10,7 @@ import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
 
 const navigation = [
 	{type: 'link', title: 'Quests', link: '/quests'},
-	{type: 'link', title: 'Space', link: '/Space'},
+	{type: 'link', title: 'Space', link: '/space'},
 	{type: 'link', title: 'Web3', link: '/web3'},
 	{type: 'link', title: 'Swap', link: '/swap'},
 	{type: 'link', title: 'Bridge', link: '/bridge'},

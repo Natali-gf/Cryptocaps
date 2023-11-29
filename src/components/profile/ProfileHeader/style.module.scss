@@ -29,4 +29,10 @@
 			color: t('textMain');
 		}
 	}
+	&__subtitle {
+		@include fontStyle(20px, 500);
+		@include themed() {
+			color: t('textMain');
+		}
+	}
 }

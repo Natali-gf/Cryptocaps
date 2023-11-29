@@ -10,10 +10,21 @@
 		background-color: t('bg');
 	}
 	&__main {
-		display: flex;
-
 		width: 100%;
 		display: grid;
 		grid-template-columns: 6fr 1fr 2.5fr;
+		position: relative;
+	}
+	&__quests {
+		display: flex;
+		width: 100%;
+	}
+	&__mascot {
+		position: absolute;
+		left: 60%;
+		bottom: 0;
+		margin-bottom: -50px;
+		height: 600px;
+		overflow: hidden;
 	}
 }
