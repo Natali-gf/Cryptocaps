@@ -1,20 +1,24 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
-import MainBlock from '../../../components/mainParts/MainBlock/MainBlock';
-import QuestCard from '../../../components/cards/QuestCard/QuestCard';
 import {questsApi} from '../../../core/store/services/questsApi';
-import {userApi} from '../../../core/store/services/userApi';
-import QuestsGroup from '../../../components/cards/groups/QuestsGroup/QuestsGroup';
 import MainBoard from './MainBoard';
+import SearchPanel from '../../../components/SearchPanel/SearchPanel';
+import Tabs from '../../../components/ui/Tabs/Tabs';
+import QuestsGroup from '../../../components/cards/groups/QuestsGroup/QuestsGroup';
 
 function QuestsPage() {
-	// const [openedMenu, setOpenedMenu] = React.useState<boolean>(false);
-	// const [errorNotification, showErrorNotification] = React.useState<boolean>(false);
+	const [activeTab, setActiveTab] = React.useState(true);
+
 	const {data: questsBeginner} = questsApi.useFetchQuestsBeginnerQuery('');
 	const {data: questsFirst} = questsApi.useFetchQuestsFirstQuery('');
 	const {data: questsNext} = questsApi.useFetchQuestsNextQuery('');
 	const {data: questsExplore} = questsApi.useFetchQuestsExploreQuery('');
+
+	const tabs = [
+		{title: 'All', onClick: () => setActiveTab(true), isActive: activeTab},
+		{title: 'Following', onClick: () => setActiveTab(false), isActive: !activeTab},
+	];
 
 	// console.log(questsExplore)
 	React.useEffect(() => {}, []);
@@ -22,6 +26,8 @@ function QuestsPage() {
 	return (
 		<main className={cn(s.content)}>
 			<MainBoard />
+			<Tabs className={s.content__tabs} tabs={tabs}/>
+			<SearchPanel />
 			{questsBeginner && (
 				<QuestsGroup quests={questsBeginner} title={'Styding for beginners'} />
 			)}

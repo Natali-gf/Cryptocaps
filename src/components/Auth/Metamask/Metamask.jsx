@@ -2,13 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import s from './style.module.scss';
 import cn from 'classnames';
-import logoMetamask from '../../../assets/images/metamask.png';
 import Button from '../../ui/buttons/Button/Button';
-import { MetaMaskProvider, useSDK } from '@metamask/sdk-react';
+import {MetaMaskProvider, useSDK} from '@metamask/sdk-react';
 
-function Metamask({className}) {
+function Metamask({className, isConnected}) {
 	const [userAccount, setUserAccount] = React.useState(null);
-  const { sdk, connected, connecting, provider, chainId } = useSDK();
+	const {sdk, connected, connecting, provider, chainId} = useSDK();
 
 	async function onConnect() {
 		// try {
@@ -16,22 +15,20 @@ function Metamask({className}) {
 		// 	await MMSDK.init()
 		// 	// .getProvider()
 
-    //   const accounts = await sdk?.connect();
-    //   setUserAccount(accounts?.[0]);
+		//   const accounts = await sdk?.connect();
+		//   setUserAccount(accounts?.[0]);
 		// 	console.log(accounts?.[0])
 		// 	// console.log(sdk, connected, connecting, provider, chainId, userAccount)
-    // } catch(err) {
-    //   console.warn(`failed to connect..`, err);
-    // }
+		// } catch(err) {
+		//   console.warn(`failed to connect..`, err);
+		// }
 		if (window.ethereum) {
 			window.ethereum
 				.request({method: 'eth_requestAccounts'})
 				.then((res) => console.log(res))
-				.catch(error => console.log(error))
-				//0xc39b6488589326043fe039ae99a984f5af9477e2
-
+				.catch((error) => console.log(error));
+			//0xc39b6488589326043fe039ae99a984f5af9477e2
 		} else {
-
 			console.log(2);
 		}
 	}
@@ -47,20 +44,9 @@ function Metamask({className}) {
 	}
 
 	return (
-		// <MetaMaskProvider
-		// // debug={false} sdkOptions={{
-		// // 	checkInstallationImmediately: false,
-		// // 	// extensionOnly: true,
-		// // 	dappMetadata: {
-		// // 		name: "Cryptocaps",
-		// // 		url: window.location.host,
-		// // 	}
-		// // }}
-		// >
-		<Button className={cn(s.button)} onClick={onConnect} >
-			<img src={logoMetamask} alt='Metamask' />
+		<Button className={cn(s.button, className)} onClick={onConnect}>
+			{isConnected && <div className={s.connected}></div>}
 		</Button>
-		// </MetaMaskProvider>
 	);
 }
 

@@ -1,0 +1,16 @@
+@use '../../styles/styles.scss' as *;
+@import '../../styles/variables.scss';
+
+.hint {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	border-radius: 24px;
+	&__title {
+		@include fontStyle(32px, 500, 42px);
+	}
+	&__text {
+
+		@include fontStyle(16px, 400, 28px);
+	}
+}

@@ -4,7 +4,7 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	width: 328px;
+	width: 340px;
 	height: 415px;
 	height: fit-content;
 	border-radius: 30px;
@@ -14,11 +14,11 @@
 		border: 1px solid t('bgBtnMainBackQ');
 	}
 	&__img {
-		@include width-height(326px, 275px);
+		@include width-height(338px, 275px);
 		border-radius: 30px;
 		& > img {
 			display: block;
-			@include width-height(100%, 275px);
+			@include width-height(338px, 275px);
 			border-radius: 30px;
 		}
 	}

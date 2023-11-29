@@ -5,16 +5,10 @@ import {questsApi} from '../../../core/store/services/questsApi';
 import BorderBlock from '../../../components/ui/tags/BorderBlock/BorderBlock';
 import StoreButtonApple from '../../../components/ui/buttons/StoreButton/StoreButtonApple';
 import StoreButtonGoogle from '../../../components/ui/buttons/StoreButton/StoreButtonGoogle';
-import mainImg from "../../../assets/images/main_quest.png";
+import mainImg from "../../../assets/images/img_quest.png";
 
 function MainBoard() {
-	// const [openedMenu, setOpenedMenu] = React.useState<boolean>(false);
-	// const [errorNotification, showErrorNotification] = React.useState<boolean>(false);
-	const {data: quests} = questsApi.useFetchQuestsQuery('');
-	// const {data} = userApi.useFetchUsersQuery('')
-	// console.log(quests)
-	React.useEffect(() => {}, []);
-	// console.log(quests)
+
 	return (
 		<BorderBlock className={cn(s.mainBoard)}>
 			<div className={s.mainBoard__info}>

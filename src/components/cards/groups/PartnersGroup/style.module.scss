@@ -1,0 +1,94 @@
+@use '../../../../styles/styles.scss' as *;
+@import '../../../../styles/variables.scss';
+
+.partners {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: fit-content;
+	// padding: 15px 20px;
+	// &__info {
+	// 	display: grid;
+	// 	grid-template-columns: 1fr;
+	// 	grid-template-rows: 85px 110px 140px 68px;
+	// 	padding-right: 50px;
+	// 	min-width: 446px;
+	// 	max-width: 480px;
+	// }
+	// &__title {
+	// 	@include fontStyle(24px, 600);
+	// 	margin-bottom: 45px;
+	// 	padding-top: 10px;
+	// 	@include themed() {
+	// 		color: t('textMain');
+	// 	}
+	// }
+	// &__description {
+	// 	@include fontStyle(20px, 400, 36px);
+	// }
+	// &__count {
+	// 	justify-self: flex-end;
+	// 	height: fit-content;
+	// 	width: fit-content;
+	// 	padding: 10px 33px;
+	// 	margin-right: 60px;
+	// 	@include fontStyle(20px, 400, 24px);
+	// }
+	// &__button {
+	// 	@include fontStyle(20px, 500, 24px);
+	// 	width: fit-content;
+	// 	padding: 22px 42px;
+	// 	border-radius: 24px;
+	// 	margin-left: 27px;
+	// 	@include themed() {
+	// 		background-color: t('bgBtnMain');
+	// 	}
+	// }
+}
+
+// .cards {
+// 	display: flex;
+// 	align-items: flex-end;
+// 	width: 100%;
+// 	gap: 30px;
+// 	&__quests {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		width: 100%;
+// 	}
+// 	&__nav {
+// 		&_back,
+// 		.cards &_next {
+// 			font-size: 30px;
+// 			padding: 50px 20px;
+// 			height: fit-content;
+// 			background-color: transparent;
+// 			margin-bottom: 50px;
+// 			&:disabled {
+// 				@include themed() {
+// 					background-color: transparent;
+// 				}
+// 				&::before {
+// 					@include themed() {
+// 						color: t('btnBgDisabled');
+// 					}
+// 				}
+// 			}
+// 		}
+// 		&_back {
+// 			rotate: 180deg;
+// 			&::before {
+// 				@include themed() {
+// 					color: t('bgBtnMainBackQ');
+// 				}
+// 			}
+// 		}
+// 		&_next {
+// 			&::before {
+// 				@include themed() {
+// 					color: t('bgBtnMainBackQ');
+// 				}
+// 			}
+// 		}
+// 	}
+// }

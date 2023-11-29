@@ -5,15 +5,16 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	padding: 50px 12% 50px 7%;
+	padding: 50px 12% 0 7%;
 	@include themed() {
 		background-color: t('bg');
 	}
 	&__main {
 		width: 100%;
 		display: grid;
-		grid-template-columns: 6fr 1fr 2.5fr;
+		grid-template-columns: 6fr 1fr 328px;
 		position: relative;
+		margin-bottom: 50px;
 	}
 	&__quests {
 		display: flex;
@@ -21,10 +22,21 @@
 	}
 	&__mascot {
 		position: absolute;
-		left: 60%;
+		// left: 0;
+		left: 65%;
 		bottom: 0;
-		margin-bottom: -50px;
-		height: 600px;
-		overflow: hidden;
+			overflow-y: hidden;
+			height: 57%;
+		// margin-bottom: -50px;
+		// overflow-x: visible;
+		& > div {
+			position: absolute;
+			bottom: 0;
+			& > img {
+
+			// position: absolute;
+			// bottom: 0;
+			}
+		}
 	}
 }

@@ -1,6 +1,18 @@
-// @import '../../../styles/variables.scss';
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
 @import '../../ui/buttons/Button/style.module.scss';
+
+@import '../../profile/Accounts/style.module.scss';
 
 .button {
 	@extend .button_icon;
+	@extend .account;
+	background-color: $colorWhite;
+	&::before {
+		content: url(../../../assets/images/metamask.svg);
+	}
+}
+
+.connected {
+	@extend .account__connected;
 }

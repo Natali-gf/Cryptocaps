@@ -10,9 +10,9 @@ import Tabs from '../../ui/Tabs/Tabs';
 
 function CustomQuests({title, subtitle, className}) {
 	const [customPeriod, setCustomPeriod] = React.useState(QuestStatus.Finished);
-	const {data: quests} = questsApi.useFetchQuestsQuery(customPeriod);
-	const {data: user} = userApi.useFetchUserQuestsQuery();
-console.log(user)
+	// const {data: quests} = questsApi.useFetchQuestsQuery(customPeriod);
+	const {data: user} = userApi.useFetchUserQuery();
+	console.log(user);
 	const tabs = [
 		{
 			title: 'Finished',
@@ -36,9 +36,15 @@ console.log(user)
 			<Tabs className={s.quests__tabs} tabs={tabs} />
 			<div className={s.quests__cards}>
 				{user &&
-					user[0].quests.map((item) => (
-						<QuestCard key={item.id} quest={item} isUserQuest={true} />
-					))}
+					user[0].quests
+						.filter((item) =>
+							customPeriod === QuestStatus.Active
+								? item.status === QuestStatus.Active
+								: customPeriod === QuestStatus.Inactive
+								? item.status === customPeriod
+								: item.isDone
+						)
+						.map((item) => <QuestCard key={item.id} quest={item} isUserQuest={true} />)}
 			</div>
 		</div>
 	);

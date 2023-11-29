@@ -6,13 +6,14 @@ export const partnersApi = createApi({
 	baseQuery: fetchBaseQuery({baseUrl: baseUrl}),
 	endpoints: (build) => ({
 		fetchPartners: build.query({
-			query: ({sort, order, limit = 3, page = 1}) => ({
+			query: ({sort, order, limit = 3, page = 1, otherParam}) => ({
 				url: `/partners`,
 				params: {
 					_sort: sort,
 					_order: order,
 					_page: page,
 					_limit: limit,
+					...otherParam
 				}
 			})
 		}),

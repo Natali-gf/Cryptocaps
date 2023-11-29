@@ -33,14 +33,5 @@ export const userApi = createApi({
 				}
 			})
 		}),
-		fetchUserQuests: build.query({
-			query: () => ({
-				url: `/users`,
-				params: {
-					id: '2',
-					// quests['isDone']: true
-				}
-			})
-		}),
 	})
 })

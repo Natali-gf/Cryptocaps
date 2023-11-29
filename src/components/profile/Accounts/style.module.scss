@@ -1,0 +1,86 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables';
+@import '../CustomLeadboard/style.module.scss';
+
+.accounts {
+	width: 908px;
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+	padding: 54px 72px;
+	&__connects {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		padding: 35px 24px;
+	}
+	&__title {
+		@include fontStyle(24px, 900, 28px);
+	}
+	&__list {
+		display: flex;
+		justify-content: center;
+		gap: 64px;
+	}
+}
+
+.account {
+	position: relative;
+	width: 64px;
+	height: 64px;
+	border-radius: 24px;
+	box-shadow: 0 2px 2.5px #21222236;
+	background-color: $colorWhite;
+	@include blockCenter;
+	&_binance {
+		background-color: $colorBlack;
+		&::before {
+			content: url(../../../assets/images/binance.svg);
+		}
+	}
+	&_trust {
+		&::before {
+			content: url(../../../assets/images/trust.png);
+			height: 100%;
+		}
+	}
+	&_phantom {
+		&::before {
+			content: url(../../../assets/images/phantom.png);
+			height: 100%;
+		}
+	}
+	&_discord {
+		background-color: $colorSocialDiscord;
+		&::before {
+			content: url(../../../assets/images/discord.svg);
+		}
+	}
+	&_twitter {
+		background-color: $colorSocialTwitter;
+		&::before {
+			content: url(../../../assets/images/twitter.svg);
+		}
+	}
+	&_telegram {
+		&::before {
+			content: url(../../../assets/images/telegram.svg);
+			height: 100%;
+		}
+	}
+
+	&__connected {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: -7px -7px 0 0;
+		width: 24px;
+		height: 24px;
+		background-color: $colorQuaternaryGreen100;
+		border-radius: 50%;
+		@include blockCenter;
+		&::before {
+			content: url(../../../assets/images/done.svg);
+		}
+	}
+}

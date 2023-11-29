@@ -1,6 +1,8 @@
 @use '../../styles/styles.scss' as *;
 @import '../../styles/variables.scss';
 
-.content {
-	
+.panel {
+	display: flex;
+	gap: 136px;
+	height: 68px;
 }

@@ -5,44 +5,113 @@ $themes: (
   light: (
     bg: $bgLight,
     bgNoise: $bgNoiseLight,
+    surfPrim: $colorGrey100,
+    surfStroke: $colorPurple200,//borderMain
+    surfStroke2: $colorGreen400,//bgBtnMainBackQ
+    textPrimHeader: $colorPurple700,
+    textPrimMain: $colorBlack,//textMain
+    textScnd: $colorGrey700,
     textAccent: $colorPurple400,
-    borderMain: $colorPurple200,
-    bgBtnMain: $colorPurple400,
+    btnBgConfirm: $colorWhite,
+    btnBgActive: $colorPurple400,//bgBtnMain
+    btnLabelActive: $colorWhite,
+    btnLabelActive2: $colorBlack,
+    btnBgDisabled: $colorGrey400,
+    btnLabelDisabled: $colorGrey700,
+    btnBgError: $colorRed400,
+    btnLabelError: $colorGrey100,
+    btnBgVerif: $colorOrange200,
+    btnLabelVerif: $colorBlack,
+    btnBgSuccess: $colorQuaternaryGreen400,
+    btnLblSuccess: $colorWhite,
+    formBg: $colorGrey200,
+    formLbl: $colorGrey700,
+    formLblPlholder: $colorGrey500,
+    formErrorStrokeLbl: $colorRed400,
+    formSuccessStrokeLbl: $colorQuaternaryGreen300,
+    accent: $colorGreen200,
+    accentLight: $colorGreen100,
+    btnBgScnd: $colorGreen200,
+    btnLblScnd: $colorGrey700,
+    tagActive: $colorTertiaryGreen200,
+    tagReward: $colorPurple300,
+    tagDiffBeginner: $colorOrange100,
+    tagDiffBeginnerIcon: $colorOrange400,
+    tagDiffMedium: $colorOrange300,
+    tagDiffMediumIcon: $colorGrey700,
+    tagDiffExpert: $colorRed300,
+    tagDiffExpertIcon: $colorWhite,
+    bgCompBlur: $colorPurple240,
+
+    borderMain: $colorPurple200,//+
+    bgBtnMain: $colorPurple400,//+
     bgBtnMainBack: $colorGreen200,
-    bgBtnMainBackQ: $colorGreen400,
+    bgBtnMainBackQ: $colorGreen400,//+
     bgBtnScnd: $colorTertiaryGreen100,
     bgField: $colorGrey200,
-    textMain: $colorBlack,
+    textMain: $colorBlack,//+
     textMainBack: $colorWhite,
     textBlack: $colorBlack,
-    btnBgDisabled: $colorGrey400,
     btnTextDisabled: $colorGrey700,
     imgGradient: $colorPurple240,
-
-    // bgMain: $colorGreyDark100,
 
     bgRange: $colorWhite,
   ),
   dark: (
     bg: $bgDark,
     bgNoise: $bgNoiseDark,
+    surfPrim: $colorBlack,
+    surfStroke: $colorGreen150,//borderMain
+    surfStroke2: $colorPurple400,//bgBtnMainBackQ
+    textPrimHeader: $colorWhite,
+    textPrimMain: $colorWhite,//textMain
+    textScnd: $colorGrey100,
     textAccent: $colorGreen100,
-    borderMain: $colorGreen150,
-    bgBtnMain: $colorGreen100,
+    btnBgConfirm: $colorPurple200,
+    btnBgActive: $colorGreen100,//bgBtnMain
+    btnLabelActive: $colorBlack,
+    btnLabelActive2: $colorWhite,
+    btnBgDisabled: $colorGrey200,
+    btnLabelDisabled: $colorGrey600,
+    btnBgError: $colorRed300,
+    btnLabelError: $colorGrey700,
+    btnBgVerif: $colorOrange100,
+    btnLabelVerif: $colorBlack,
+    btnBgSuccess: $colorQuaternaryGreen200,
+    btnLblSuccess: $colorBlack,
+    formBg: $colorGrey700,
+    formLbl: $colorGrey200,
+    formLblPlholder: $colorGrey400,
+    formErrorStrokeLbl: $colorRed200,
+    formSuccessStrokeLbl: $colorQuaternaryGreen200,
+    accent: $colorPurple400,
+    accentLight: $colorPurple200,
+    btnBgScnd: $colorPurple400,
+    btnLblScnd: $colorWhite,
+    tagActive: $colorTertiaryGreen200,
+    tagReward: $colorPurple300,
+    tagDiffBeginner: $colorOrange100,
+    tagDiffBeginnerIcon: $colorOrange300,
+    tagDiffMedium: $colorOrange200,
+    tagDiffMediumIcon: $colorGrey700,
+    tagDiffExpert: $colorRed300,
+    tagDiffExpertIcon: $colorWhite,
+    surfTwitter: $colorSocialTwitter,
+    surfDiscord: $colorSocialDiscord,
+    bgCompBlur: $colorPurple730,
+
+    borderMain: $colorGreen150,//+
+    bgBtnMain: $colorGreen100,//+
     bgBtnMainBack: $colorPurple400,
-    bgBtnMainBackQ: $colorPurple400,
+    bgBtnMainBackQ: $colorPurple400,//+
     bgBtnScnd: $colorPurple200,
     bgField: $colorGrey700,
-    textMain: $colorWhite,
+    textMain: $colorWhite,//+
     textMainBack: $colorBlack,
     textBlack: $colorGrey700,
-    btnBgDisabled: $colorGrey200,
     btnTextDisabled: $colorGrey600,
     imgGradient: $colorPurple730,
 
-    // bgMain: $colorOliveDark700,
-
-    // bgButtonProfile: $colorJadeLight500,
     bgRange: $colorWhite,
   ),
 );

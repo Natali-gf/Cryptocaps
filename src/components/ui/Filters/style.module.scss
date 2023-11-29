@@ -1,0 +1,16 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.filters {
+	width: 212px;
+	@include flex-grid(flex, null, null, center);
+	padding: 0 24px;
+	&__text {
+		@include fontStyle(18px, 500, 24px);
+		width: 100%;
+		white-space: nowrap;
+		&::before {
+			margin-right: 24px;
+		}
+	}
+}

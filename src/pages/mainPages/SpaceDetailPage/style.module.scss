@@ -1,0 +1,248 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables.scss';
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 65px;
+	&__tabs {
+		width: 676px;
+	}
+	& > div:nth-child(3) {
+		z-index: 1;
+	}
+	&__others {
+		display: flex;
+		justify-content: space-between;
+		gap: 130px;
+	}
+	&__followers {
+		width: 100%;
+		justify-content: center;
+		padding: 33px;
+	}
+	&__info {
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 0 30px;
+	}
+}
+
+.mainBoard {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 65px;
+	height: 494px;
+	padding: 64px 74px 20px;
+	z-index: 1;
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 24px;
+		background: url(../../../assets/images/bg_partners.jpg);
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		opacity: 0.2;
+		z-index: -1;
+	}
+	&__info {
+		padding: 36px 0 36px 111px;
+	}
+	&__button {
+		@include fontStyle(20px, 500, 24px);
+		width: 280px;
+		padding: 24px;
+		border-radius: 24px;
+		@include themed() {
+			color: t('textMain');
+			background-color: t('bgBtnMainBack');
+		}
+	}
+	&__mascot {
+		position: absolute;
+		margin: 180px 300px 0 0;
+	}
+}
+
+.info {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	&__description {
+		width: 780px;
+		@include fontStyle(18px, 400, 36px);
+		@include themed() {
+			color: t('textMain');
+		}
+	}
+	&__followers {
+		height: 30px;
+	}
+}
+
+.partner {
+	display: flex;
+	gap: 50px;
+	height: 100%;
+	&__logo {
+		display: flex;
+		align-items: center;
+		width: 138px;
+		height: 100%;
+		& > img {
+			display: flex;
+			align-items: center;
+			width: 138px;
+			height: 138px;
+			border-radius: 50%;
+		}
+	}
+	&__info {
+		width: 450px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__text {
+		align-self: flex-start;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__name {
+		@include fontStyle(32px, 600, 36px);
+		margin-bottom: 8px;
+		@include themed() {
+			color: t('textMain');
+		}
+	}
+	&__description {
+		@include fontStyle(20px, 400, 32px);
+	}
+}
+
+.socials {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 445px;
+	align-items: center;
+	gap: 26px;
+	&__links {
+		display: flex;
+		gap: 20px;
+	}
+	&__instagram {
+		&::before {
+			content: url(../../../assets/icons/socials_instagram.svg);
+		}
+	}
+	&__twitter {
+		&::before {
+			content: url(../../../assets/icons/socials_twitter.svg);
+		}
+	}
+	&__discord {
+		&::before {
+			content: url(../../../assets/icons/socials_discord.svg);
+		}
+	}
+	&__telegram {
+		&::before {
+			content: url(../../../assets/icons/socials_telegram.svg);
+		}
+	}
+}
+
+.quests {
+	display: flex;
+	flex-direction: column;
+	width: 800px;
+	gap: 65px;
+	padding-bottom: 40px;
+	&__panel {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__title {
+		@include fontStyle(64px, 700, 68px);
+		@include themed() {
+			color: t('textMain');
+		}
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px;
+		padding: 48px;
+	}
+}
+
+.table {
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+	gap: 24px;
+	padding: 33px 9px 33px 33px;
+	&__title {
+		@include fontStyle(36px, 700, 43px);
+	}
+	&__followers {
+		width: fit-content;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		row-gap: 16px;
+		height: 385px;
+		height: 220px;
+	}
+	&__button {
+		@include fontStyle(18px, 400, 24px);
+		width: 164px;
+		height: 48px;
+		border-radius: 24px;
+		@include themed() {
+			background-color: t('bgBtnMainBack');
+			color: t('textMain');
+		}
+	}
+}
+.follower {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 24px;
+	&__name {
+		@include fontStyle(18px, 400, 24px);
+		text-align: end;
+		width: 130px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&__avatar {
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+	}
+}
+.mascot {
+	position: absolute;
+	margin-top: -50px;
+	margin-left: -150px;
+}
