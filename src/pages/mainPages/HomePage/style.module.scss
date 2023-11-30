@@ -2,13 +2,14 @@
 @import '../../../styles/variables.scss';
 
 .content {
-	// position: relative;
 	&__mainScreen {
 		height: 1050px;
-		// @include themed() {
-		// 	background: t('bgNoise'), t('bg');
-		// }
 		z-index: 10;
+	}
+	&__boards {
+		display: flex;
+		flex-direction: column;
+		gap: 240px;
 	}
 }
 
@@ -19,7 +20,6 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 92px auto 0;
-	// @include textCenter;
 	&__subtitle {
 		@include fontStyle(40px, 400, 48px);
 		@include themed() {
@@ -37,6 +37,5 @@
 	transform: scaleX(-1);
 	&_go {
 		transition: 3s;
-		// right: 0;
 	}
 }

@@ -7,10 +7,6 @@ import Hint from '../../../components/Hint/Hint';
 import Accounts from '../../../components/profile/Accounts/Accounts';
 
 function ConnectPage() {
-	// const [openedMenu, setOpenedMenu] = React.useState<boolean>(false);
-	// const [errorNotification, showErrorNotification] = React.useState<boolean>(false);
-
-	React.useEffect(() => {}, []);
 
 	return (
 		<main className={cn(s.wrapper__content, s.content)}>

@@ -4,9 +4,6 @@ import s from './style.module.scss';
 import BorderBlock from '../ui/tags/BorderBlock/BorderBlock';
 
 function Hint({className, children}) {
-	const leaders = [];
-
-	React.useEffect(() => {}, []);
 
 	return (
 		<>

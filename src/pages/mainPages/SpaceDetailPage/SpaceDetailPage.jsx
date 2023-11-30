@@ -1,18 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
-import MainBlock from '../../../components/mainParts/MainBlock/MainBlock';
 import MainBoard from './MainBoard';
-import Tabs from '../../../components/ui/Tabs/Tabs';
-import SearchPanel from '../../../components/SearchPanel/SearchPanel';
-import PartnersGroup from '../../../components/cards/groups/PartnersGroup/PartnersGroup';
 import {partnersApi} from '../../../core/store/services/partnersApi';
 import {useLocation} from 'react-router-dom';
 import Filters from '../../../components/ui/Filters/Filters';
 import BorderTag from '../../../components/ui/tags/BorderTag/BorderTag';
 import BorderBlock from '../../../components/ui/tags/BorderBlock/BorderBlock';
-import QuestsGroup from '../../../components/cards/groups/QuestsGroup/QuestsGroup';
-import mascot from '../../../assets/images/mascot_show.png';
+import mascot from '../../../assets/images/mascot/mascot_show.png';
 import QuestCard from '../../../components/cards/QuestCard/QuestCard';
 import {userApi} from '../../../core/store/services/userApi';
 import Button from '../../../components/ui/buttons/Button/Button';
@@ -23,12 +18,7 @@ function SpaceDetailPage() {
 
 	const {data: partner} = partnersApi.useFetchPartnerByIdQuery(currentPartnerId);
 	const {data: users} = userApi.useFetchLeadersQuery();
-	console.log(users);
-	const [activeTab, setActiveTab] = React.useState(true);
-	// const {data: partners} = partnersApi.useFetchPartnersQuery({limit: 5});
 
-	React.useEffect(() => {}, []);
-	console.log(partner);
 	return (
 		<>
 			<main className={cn(s.content)}>

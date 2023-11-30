@@ -1,8 +1,6 @@
 import React from 'react';
 import s from './style.module.scss';
 import cn from 'classnames';
-import Leaderboard from '../../Leaderboard/Leaderboard';
-import {questsApi} from '../../../core/store/services/questsApi';
 import {QuestStatus} from '../../../core/constants/Quest';
 import QuestCard from '../../cards/QuestCard/QuestCard';
 import {userApi} from '../../../core/store/services/userApi';
@@ -10,7 +8,6 @@ import Tabs from '../../ui/Tabs/Tabs';
 
 function CustomQuests({title, subtitle, className}) {
 	const [customPeriod, setCustomPeriod] = React.useState(QuestStatus.Finished);
-	// const {data: quests} = questsApi.useFetchQuestsQuery(customPeriod);
 	const {data: user} = userApi.useFetchUserQuery();
 	console.log(user);
 	const tabs = [

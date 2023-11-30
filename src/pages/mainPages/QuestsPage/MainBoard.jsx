@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
-import {questsApi} from '../../../core/store/services/questsApi';
 import BorderBlock from '../../../components/ui/tags/BorderBlock/BorderBlock';
 import StoreButtonApple from '../../../components/ui/buttons/StoreButton/StoreButtonApple';
 import StoreButtonGoogle from '../../../components/ui/buttons/StoreButton/StoreButtonGoogle';

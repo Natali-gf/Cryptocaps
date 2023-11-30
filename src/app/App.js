@@ -12,12 +12,10 @@ import ConnectPage from '../pages/UserProfile/ConnectPage/ConnectPage';
 import LeaderboardPage from '../pages/UserProfile/LeaderboardPage';
 import ProfilePage from '../pages/UserProfile/ProfilePage';
 import ProfileQuestsPage from '../pages/UserProfile/QuestsPage';
-import {generateData} from '../temporaryData/generateData';
 import './style.scss';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
-	// generateData()
 
 	return (
 		<Routes>

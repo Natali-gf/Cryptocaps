@@ -1,0 +1,13 @@
+@use '../../styles/styles.scss' as *;
+@import '../../styles/variables';
+
+.title {
+	@include fontSyncrone;
+	@include fontStyle(120px, 400, 146px);
+	text-shadow: 0 13px 0 $colorPurple400;
+	color: $colorWhite;
+	text-transform: uppercase;
+	@include themed() {
+		-webkit-text-stroke: 2px t('textScnd');
+	}
+}

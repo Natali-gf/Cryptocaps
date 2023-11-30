@@ -22,20 +22,14 @@
 	}
 	&__mascot {
 		position: absolute;
-		// left: 0;
 		left: 65%;
 		bottom: 0;
 			overflow-y: hidden;
 			height: 57%;
-		// margin-bottom: -50px;
-		// overflow-x: visible;
 		& > div {
 			position: absolute;
 			bottom: 0;
 			& > img {
-
-			// position: absolute;
-			// bottom: 0;
 			}
 		}
 	}

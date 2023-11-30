@@ -4,11 +4,6 @@ import s from './style.module.scss';
 import MainBlock from '../../../components/mainParts/MainBlock/MainBlock';
 
 function BridgePage() {
-	// const [openedMenu, setOpenedMenu] = React.useState<boolean>(false);
-	// const [errorNotification, showErrorNotification] = React.useState<boolean>(false);
-
-	React.useEffect(() => {
-	}, [])
 
 	return (
 		<>

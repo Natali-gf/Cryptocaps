@@ -2,10 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
 import BorderBlock from '../../../components/ui/tags/BorderBlock/BorderBlock';
-import {partnersApi} from '../../../core/store/services/partnersApi';
 import SubscribeButton from '../../../components/ui/buttons/SubscribeButton/SubscribeButton';
 import Button from '../../../components/ui/buttons/Button/Button';
-import mascot from '../../../assets/images/mascot_sit.png';
 import {Link} from 'react-router-dom';
 
 function MainBoard({partner}) {

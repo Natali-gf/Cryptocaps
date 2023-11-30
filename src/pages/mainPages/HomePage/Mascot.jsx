@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
-import {} from '../../../assets/images/mascot.png';
 
 function Mascot() {
 	const slideRef = React.useRef();

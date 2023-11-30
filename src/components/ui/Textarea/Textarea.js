@@ -1,13 +1,10 @@
 import style from './style.module.scss';
 import cn from 'classnames';
 import React from 'react';
-// import { PatternFormat } from 'react-number-format';
 
 export default function Textarea(props) {
 	const [inputValue, setInputValue] = React.useState(props.defaultValue || '');
-	const [typeInput, setTypeInput] = React.useState(props.type);
 	const inputRef = React.useRef();
-	let idNumber = Math.random();
 
 	const handleChange = (e) => {
 		e.preventDefault();

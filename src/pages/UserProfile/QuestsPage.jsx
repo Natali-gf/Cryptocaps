@@ -7,9 +7,6 @@ import CustomQuests from '../../components/profile/CustomQuests/CustomQuests';
 
 function QuestsPage() {
 
-	React.useEffect(() => {
-	}, [])
-
 	return (
 		<main className={cn(s.wrapper__content, s.content)}>
 			<ProfileHeader title={'Quests'} />

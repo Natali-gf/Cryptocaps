@@ -1,12 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
-import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
-import Logout from '../../Auth/Logout/Logout';
-import {useDispatch, useSelector} from 'react-redux';
-import {Status, StatusCode} from '../../../core/constants/Status';
-import NavigationLink from '../../ui/Navlink/Navlink';
-import {fetchUser} from '../../../core/store/slices/user';
 
 function UserData({user, inSidebar}) {
 

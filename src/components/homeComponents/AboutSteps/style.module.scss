@@ -1,12 +1,102 @@
 @use '../../../styles/styles.scss' as *;
 @import '../../../styles/variables';
+@import '../style.module.scss';
 
 .instruction {
 	&__title {
-		@include fontSyncrone;
-		@include fontStyle(120px, 400, 146px);
-		@include themed() {
-			color: t('');
+		@extend .title;
+		margin-bottom: 40px;
+	}
+	&__steps {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.step {
+	position: relative;
+	width: 444px;
+	height: 339px;
+	border-radius: 24px;
+	padding: 32px 16px;
+	color: $colorWhite;
+	@include themed() {
+		border: 1px solid t('surfStroke');
+	}
+	background-repeat: no-repeat;
+	display: grid;
+	align-items: flex-end;
+	grid-template-columns: 80px 3fr;
+	grid-template-rows: 71px 1fr 44px;
+	gap: 20px;
+	grid-template-areas:
+		'num title'
+		'.	 descr'
+		'link link';
+	&::before {
+		content: '';
+		position: absolute;
+		border-radius: 24px;
+		height: 100%;
+		width: 100%;
+		opacity: 0.3;
+		bottom: 0;
+	}
+	&_first {
+		background: url(../../../assets/images/insrtuction_bg_01.png);
+		&::before {
+			background: url(../../../assets/images/insrtuction_bg_01.png),
+				url(../../../assets/images/insrtuction_bg_img_01.png) no-repeat;
 		}
+	}
+	&_second {
+		background: url(../../../assets/images/insrtuction_bg_02.png);
+		&::before {
+			opacity: 0.2;
+			background: url(../../../assets/images/insrtuction_bg_02.png), url(../../../assets/images/insrtuction_bg_img_02.png) no-repeat,
+				;
+		}
+	}
+	&_third {
+		background: url(../../../assets/images/insrtuction_bg_03.png);
+		&::before {
+			opacity: 0.5;
+			background: url(../../../assets/images/insrtuction_bg_img_03.png) no-repeat,
+				url(../../../assets/images/insrtuction_bg_03.png);
+		}
+	}
+	&__number {
+		grid-area: num;
+		@include fontSyncrone;
+		@include fontStyle(90px, 400, 90px);
+		justify-self: end;
+		align-self: end;
+		z-index: 1;
+		&_first {
+			margin-bottom: -8px;
+		}
+		&_second {
+		}
+		&_third {
+		}
+	}
+	&__title {
+		grid-area: title;
+		@include fontStyle(32px, 600, 38px);
+		z-index: 1;
+	}
+	&__description {
+		grid-area: descr;
+		align-self: start;
+		@include fontStyle(20px, 400, 32px);
+		z-index: 1;
+	}
+	&__link {
+		grid-area: link;
+		@include fontStyle(20px, 500, 24px);
+		color: $colorGreen100;
+		cursor: pointer;
+		justify-self: center;
+		z-index: 1;
 	}
 }

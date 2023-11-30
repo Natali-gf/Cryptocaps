@@ -20,9 +20,6 @@ function QuestsPage() {
 		{title: 'Following', onClick: () => setActiveTab(false), isActive: !activeTab},
 	];
 
-	// console.log(questsExplore)
-	React.useEffect(() => {}, []);
-
 	return (
 		<main className={cn(s.content)}>
 			<MainBoard />

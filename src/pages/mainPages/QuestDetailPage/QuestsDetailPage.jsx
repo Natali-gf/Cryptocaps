@@ -17,7 +17,7 @@ import QuestSteps from '../../../components/ui/tags/QuestSteps/QuestSteps';
 import TaskView from '../../../components/ui/tags/TaskView/TaskView';
 import CheckButton from '../../../components/ui/buttons/CheckButton/CheckButton';
 import UserData from '../../../components/profile/UserData/UserData';
-import mascot from '../../../assets/images/mascot.png';
+import mascot from '../../../assets/images/mascot/mascot.png';
 import {partnersApi} from '../../../core/store/services/partnersApi';
 
 function QuestsDetailPage() {

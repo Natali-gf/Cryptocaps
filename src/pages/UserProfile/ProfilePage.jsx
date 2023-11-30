@@ -6,8 +6,6 @@ import CustomLeadboard from '../../components/profile/CustomLeadboard/CustomLead
 import Hint from '../../components/Hint/Hint';
 
 function ProfilePage() {
-	// const [openedMenu, setOpenedMenu] = React.useState<boolean>(false);
-	// const [errorNotification, showErrorNotification] = React.useState<boolean>(false);
 
 	React.useEffect(() => {
 	}, [])

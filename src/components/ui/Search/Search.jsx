@@ -1,6 +1,5 @@
 import {useDispatch, useSelector} from 'react-redux';
 import s from './style.module.scss';
-// import {setSearchValue} from '../../../store/slices/searchSlice';
 import cn from 'classnames';
 import BorderBlock from '../tags/BorderBlock/BorderBlock';
 
