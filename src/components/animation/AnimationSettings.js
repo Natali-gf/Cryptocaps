@@ -126,7 +126,7 @@ export default function AnimationSettings() {
 			colorizing={colorizing}
 			anim={{
 				init: 0,
-				update: (t) => t + 0.001,
+				update: (t) => t + 0.002,
 			}}
 		/>
 	);

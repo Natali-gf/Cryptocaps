@@ -1,0 +1,12 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables';
+
+.instruction {
+	&__title {
+		@include fontSyncrone;
+		@include fontStyle(120px, 400, 146px);
+		@include themed() {
+			color: t('');
+		}
+	}
+}

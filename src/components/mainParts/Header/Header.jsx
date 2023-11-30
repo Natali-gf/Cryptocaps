@@ -1,12 +1,10 @@
-import {Link} from 'react-router-dom';
 import s from './style.module.scss';
 import cn from 'classnames';
-import Auth from '../../Auth/Auth';
 import logo from '../../../assets/images/logo.png';
-import Metamask from '../../Auth/Metamask/Metamask';
 import Button from '../../ui/buttons/Button/Button';
 import NavigationLink from '../../ui/Navlink/Navlink';
 import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
+import BorderBlock from '../../ui/tags/BorderBlock/BorderBlock';
 
 const navigation = [
 	{type: 'link', title: 'Quests', link: '/quests'},
@@ -18,17 +16,15 @@ const navigation = [
 		type: 'menu',
 		title: 'More ',
 		submenu: [
-			{type: 'link', title: 'one more link', link: '/'},
-			{type: 'link', title: 'one more link', link: '/'},
-			{type: 'link', title: 'one more link', link: '/'},
+			{type: 'link', title: 'FAQ', link: '/'},
+			{type: 'link', title: 'How to connect a wallet?', link: '/'},
+			{type: 'link', title: 'NEWS', link: '/'},
 		],
 	},
 ];
-export default function Header({title, subtitle, className}) {
+export default function Header({className}) {
 	return (
 		<header className={cn(s.header, className)}>
-			{/* <Auth /> */}
-
 			<nav className={cn(s.header__navigation, s.navigation)}>
 				<ul className={cn(s.navigation__list)}>
 					<li className={s.navigation__item}>
@@ -50,40 +46,44 @@ export default function Header({title, subtitle, className}) {
 								</NavigationLink>
 							</li>
 						) : (
-							<li className={s.navigation__item} key={idx}>
+							<li
+								className={cn(
+									s.navigation__item,
+									s.navigation__link,
+									'icon_arrow_down_after'
+								)}
+								key={idx}>
 								{item.title}
-								<ul className={cn(s.navigation__submenu, s.submenu)}>
+								<BorderBlock className={cn(s.navigation__submenu, s.submenu)}>
 									{item.submenu.map((item, idx) => (
-										<li className={s.submenu__item} key={idx}>
-											<NavigationLink
-												className={s.submenu__link}
-												activeClassName={s.navigation__link_active}
-												to={item.link}>
-												{item.title}
-											</NavigationLink>
-										</li>
+										// <li className={s.submenu__item} key={idx}>
+										<NavigationLink
+											className={cn(s.submenu__link, 'icon_arrow_towards')}
+											key={idx}
+											activeClassName={s.navigation__link_active}
+											to={item.link}>
+											{item.title}
+										</NavigationLink>
+										// </li>
 									))}
-								</ul>
+								</BorderBlock>
 							</li>
 						)
 					)}
 				</ul>
 			</nav>
 			<div className={cn(s.header__auth, s.auth)}>
-				<ThemeSwitch />
-				<NavigationLink className={s.auth__button} to={'/admin/general'}>
-					admin
-				</NavigationLink>
-				<NavigationLink className={s.auth__button} to={'/account/leaderboard'}>
-					user
-				</NavigationLink>
-				<Button className={cn(s.auth__button, s.auth__button_login)}>
-					Log In
-				</Button>
-				<Button className={cn(s.auth__button, s.auth__button_wallet)}>
-				 	Wallet
-				</Button>
-				{/* <Metamask className={cn(s.auth__button, s.auth__button_wallet)} /> */}
+				<div className={s.temp}>
+					<ThemeSwitch />
+					<NavigationLink className={s.auth__button} to={'/admin/general'}>
+						{'admin '}
+					</NavigationLink>
+					<NavigationLink className={s.auth__button} to={'/account/leaderboard'}>
+						user
+					</NavigationLink>
+				</div>
+				<Button className={cn(s.auth__button, s.auth__button_login)}>Log In</Button>
+				<Button className={cn(s.auth__button, s.auth__button_wallet, 'icon_money')}>Wallet</Button>
 			</div>
 		</header>
 	);

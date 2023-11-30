@@ -1,9 +1,9 @@
 @use '../../styles/styles.scss' as *;
 @import '../../styles/variables.scss';
 
-.anim {
-  position: fixed;
-  width: 100vw;
-  height: 800px;
-  left: 0;
+.animation {
+	position: absolute;
+	left: 0;
+	width: 100vw;
+	height: 1020px;
 }
