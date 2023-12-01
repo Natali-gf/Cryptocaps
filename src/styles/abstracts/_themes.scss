@@ -6,6 +6,7 @@ $themes: (
     bg: $bgLight,
     bgNoise: $bgNoiseLight,
     surfPrim: $colorGrey100,
+    surfPrim2: $bgLight,
     surfStroke: $colorPurple200,//borderMain
     surfStroke2: $colorGreen400,//bgBtnMainBackQ
     textPrimHeader: $colorPurple700,
@@ -30,7 +31,7 @@ $themes: (
     formErrorStrokeLbl: $colorRed400,
     formSuccessStrokeLbl: $colorQuaternaryGreen300,
     accent: $colorGreen200,
-    accentLight: $colorGreen100,
+    accentLight: $colorTertiaryGreen100,
     btnBgScnd: $colorGreen200,
     btnLblScnd: $colorGrey700,
     tagActive: $colorTertiaryGreen200,
@@ -42,6 +43,14 @@ $themes: (
     tagDiffExpert: $colorRed300,
     tagDiffExpertIcon: $colorWhite,
     bgCompBlur: $colorPurple240,
+    linearGradient: $linearPurple300,
+    linearGradientBack: $linearGreen100,
+    linearGradientBackT: $linearGreen100Back,
+    diffPurpleGradient: $metalicPurple,
+    diffGreenGradient: $metalicGreen,
+    bgNft: $bgNftLight,
+    starQuest: $starQuestGreen,
+    ring: $ringLight,
 
     borderMain: $colorPurple200,//+
     bgBtnMain: $colorPurple400,//+
@@ -61,6 +70,7 @@ $themes: (
     bg: $bgDark,
     bgNoise: $bgNoiseDark,
     surfPrim: $colorBlack,
+    surfPrim2: $colorBlack,
     surfStroke: $colorGreen150,//borderMain
     surfStroke2: $colorPurple400,//bgBtnMainBackQ
     textPrimHeader: $colorWhite,
@@ -99,6 +109,14 @@ $themes: (
     surfTwitter: $colorSocialTwitter,
     surfDiscord: $colorSocialDiscord,
     bgCompBlur: $colorPurple730,
+    linearGradient: $linearGreen100,
+    linearGradientBack: $linearPurple300,
+    linearGradientBackT: $linearPurple300Back,
+    diffPurpleGradient: $linearPurple300,
+    diffGreenGradient: $linearGreen100,
+    bgNft: $bgNftDark,
+    starQuest: $starQuestPurple,
+    ring: $ringDark,
 
     borderMain: $colorGreen150,//+
     bgBtnMain: $colorGreen100,//+

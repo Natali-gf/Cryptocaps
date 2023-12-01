@@ -5,6 +5,9 @@ import Button from '../../ui/buttons/Button/Button';
 import NavigationLink from '../../ui/Navlink/Navlink';
 import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
 import BorderBlock from '../../ui/tags/BorderBlock/BorderBlock';
+import {Link} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {showAuthorization} from '../../../core/store/slices/windowStateSlice';
 
 const navigation = [
 	{type: 'link', title: 'Quests', link: '/quests'},
@@ -23,6 +26,8 @@ const navigation = [
 	},
 ];
 export default function Header({className}) {
+	const dispatch = useDispatch();
+
 	return (
 		<header className={cn(s.header, className)}>
 			<nav className={cn(s.header__navigation, s.navigation)}>
@@ -73,7 +78,7 @@ export default function Header({className}) {
 				</ul>
 			</nav>
 			<div className={cn(s.header__auth, s.auth)}>
-				<div className={s.temp}>
+				{/* <div className={s.temp}>
 					<ThemeSwitch />
 					<NavigationLink className={s.auth__button} to={'/admin/general'}>
 						{'admin '}
@@ -81,9 +86,31 @@ export default function Header({className}) {
 					<NavigationLink className={s.auth__button} to={'/account/leaderboard'}>
 						user
 					</NavigationLink>
-				</div>
-				<Button className={cn(s.auth__button, s.auth__button_login)}>Log In</Button>
-				<Button className={cn(s.auth__button, s.auth__button_wallet, 'icon_money')}>Wallet</Button>
+				</div> */}
+				{localStorage.authorization ? (
+					<Link
+						to={
+							localStorage.authorization === 'user'
+								? '/account/leaderboard'
+								: 'admin/tasks'
+						}
+						className={cn(s.auth__button, s.auth__button_login)}
+						// onClick={() => dispatch(showAuthorization(true))}
+						>
+						Profile
+					</Link>
+				) : (
+					<>
+						<Button
+							className={cn(s.auth__button, s.auth__button_login)}
+							onClick={() => dispatch(showAuthorization(true))}>
+							Log In
+						</Button>
+						<Button className={cn(s.auth__button, s.auth__button_wallet, 'icon_money')}>
+							Wallet
+						</Button>
+					</>
+				)}
 			</div>
 		</header>
 	);

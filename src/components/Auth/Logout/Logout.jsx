@@ -2,11 +2,21 @@ import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
 import Button from '../../ui/buttons/Button/Button';
+import { Link } from 'react-router-dom';
+import NavigationLink from '../../ui/Navlink/Navlink';
 
 function Logout() {
-	React.useEffect(() => {}, []);
+	React.useEffect(() => {
 
-	function handleckick() {}
+	}, []);
+
+	function handleckick(e) {
+		e.preventDefault()
+		localStorage.setItem('authorization', '');
+		// window.location.assign('/')
+
+		window.location.href = '/';
+	}
 
 	return (
 		<>

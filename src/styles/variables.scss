@@ -66,7 +66,16 @@ $colorOrange700: #251900;
 $colorSocialTwitter: #1da1f2;
 $colorSocialDiscord: #7289da;
 
-$colorShadowAP: #6667AB;
+$colorShadowAP: #6667ab;
+
+//gradient
+$linearGreen100: linear-gradient(#b0fe76, transparent);
+$linearGreen100Back: linear-gradient(225deg, transparent, #b0fe76);
+$linearPurple300: linear-gradient($colorPurple300, transparent);
+$linearPurple300Back: linear-gradient(225deg, transparent, $colorPurple300);
+$metalicPurple: linear-gradient($colorPurple400, #53279c, $colorPurple400);
+$metalicGreen: linear-gradient($colorGreen200, #5F9C1F, $colorGreen200);
+$linearPurpleGreen: linear-gradient($colorPurple400, #9d74df, $colorGreen100, #e6ff84);
 
 //sizes
 $sizeContainerLarge: 1920px;
@@ -82,6 +91,14 @@ $shadowLarge: 0 0 8px 0.2px rgba(49, 53, 63, 0.6);
 $shadowLittle: 0 0 5px 0.2px rgba(49, 53, 63, 0.5);
 $hoverAdminPanel: 0 0 20px $colorShadowAP;
 
+
+$bgNftLight: url(../../assets/images/mesh_green.png) bottom 0 left 0 no-repeat, linear-gradient($bgLight, $bgLight);
+$bgNftDark: url(../../assets/images/mesh_green.png) bottom 0 left 0 no-repeat, url(../../../assets/images/blur_bg_nft.png) bottom 0 left 0 no-repeat;
+$starQuestGreen: url(../../assets/images/star_quest_green.svg) no-repeat;
+$starQuestPurple: url(../../assets/images/star_quest_purple.svg) no-repeat;
+$ringLight: url(../../assets/images/mascot/ring_big_light.png) no-repeat;
+$ringDark: url(../../assets/images/mascot/ring_big.png) no-repeat;
+
 @mixin fontStyle($size: 16px, $weight: 400, $height: normal) {
 	font-size: $size;
 	font-weight: $weight;
@@ -89,10 +106,12 @@ $hoverAdminPanel: 0 0 20px $colorShadowAP;
 }
 
 @mixin fontSyncrone() {
-	font-family: 'Syncrone', 'HubotExpanded', 'Hubot', Tahoma, Geneva, Verdana,
-		sans-serif;
+	font-family: 'Syncrone', 'HubotExpanded', 'Hubot', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+@mixin fontSyncroneOblique() {
+	font-family: 'SyncroneOblique', 'Syncrone', 'HubotExpanded', 'Hubot', Tahoma, Geneva,
+		Verdana, sans-serif;
+}
 @mixin fontHubot() {
 	font-family: 'Hubot', Tahoma, Geneva, Verdana, sans-serif;
 }

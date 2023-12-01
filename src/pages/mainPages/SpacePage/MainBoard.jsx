@@ -7,7 +7,7 @@ import SubscribeButton from '../../../components/ui/buttons/SubscribeButton/Subs
 import Button from '../../../components/ui/buttons/Button/Button';
 import mascot from "../../../assets/images/mascot/mascot_sit.png";
 
-function MainBoard() {
+function MainBoard({className}) {
 	const slideRef = React.useRef();
 	const [slider, setSlider] = React.useState(0);
 	const {data: partners} = partnersApi.useFetchPartnersQuery({limit: 5});
@@ -24,7 +24,7 @@ function MainBoard() {
 	}, [partners]);
 
 	return (
-		<BorderBlock className={cn(s.mainBoard)}>
+		<BorderBlock className={cn(s.mainBoard, className)}>
 					<div className={s.mainBoard__bg}></div>
 			{partners && (
 				<div className={cn(s.mainBoard__info, s.info)}>

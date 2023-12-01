@@ -13,30 +13,52 @@
 .mainBoard {
 	display: flex;
 	justify-content: space-around;
-	padding: 0 152px 0 82px;
+	gap: 65px;
+	padding: 36px 82px 36px 82px;
 	&__info {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
-		gap: 40px;
+		gap: 80px;
 		padding: 40px 0;
 	}
+	&__text {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 40px;
+	}
 	&__title {
+		width: 100%;
+		text-align: center;
 		@include fontSyncrone;
-		font-size: 40px;
+		font-size: 48px;
 		@include themed() {
 			color: t('surfStroke2');
 		}
 	}
 	&__subtitle {
+		display: flex;
+		align-items: center;
+		height: 30px;
 		@include fontSyncrone;
 		font-size: 24px;
 		font-weight: 30px;
 		text-align: center;
-		max-width: 400px;
 		@include themed() {
 			color: t('textPrimHeader');
+		}
+		// background-color: transparent;
+		&::before {
+			display: block;
+			rotate: 180deg;
+			font-size: 24px;
+			margin-right: 24px;
+			@include themed() {
+				color: t('surfStroke2');
+				text-shadow: 2px -3px 2px t('textAccent');
+			}
 		}
 	}
 	&__links {
@@ -46,7 +68,7 @@
 	&__img {
 		margin-right: 50px;
 		& > img {
-			@include width-height(274px, 550px);
+			@include width-height(274px, 491px);
 			border-radius: 24px;
 		}
 	}

@@ -2,61 +2,157 @@
 @import '../../../styles/variables';
 @import '../style.module.scss';
 
-.game {
+.nft {
 	position: relative;
-	&__title {
-		@extend .title;
+	&__header {
 		margin-bottom: 40px;
 	}
-	&__block {
-		display: flex;
-		justify-content: space-between;
-		padding: 0 0 0 96px;
+}
+
+.header {
+	display: flex;
+	&__title {
+		@extend .title;
 	}
-	&__about {
-		width: 767px;
-		padding: 54px 16px;
+	&__additional {
+		padding: 16px;
+		&::before {
+			position: absolute;
+			font-size: 120px;
+			@include themed() {
+				color: $colorPurple300;
+				background: t('diffPurpleGradient');
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+		}
+	}
+	&__subtitle {
+		@include fontSyncroneOblique;
+		@include fontStyle(32px, 400, 38px);
+		@include themed() {
+			color: t('textPrimHeader');
+		}
+	}
+}
+
+.character {
+	height: 716px;
+	display: grid;
+	padding: 72px 0;
+	grid-template-columns: 2fr 1fr;
+	@include themed() {
+		background: t('bgNft');
+	}
+	background: url(../../../assets/images/mesh_green.png) bottom 0 left 0 no-repeat,
+		url(../../../assets/images/blur_bg_nft.png) bottom 0 left 0 no-repeat;
+	&__visual {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 44px;
+	}
+	&__nft {
 		display: flex;
 		flex-direction: column;
-		gap: 54px;
+		align-items: center;
 	}
-	&__store {
-		display: flex;
-		gap: 36px;
+	&__model {
+		width: 444px;
+		background: url(../../../assets/images/nft/bg_shadow.png) no-repeat;
+		background-size: 444px 352px;
+		background-position-y: center;
+		& > img {
+			width: 444px;
+		}
 	}
-	&__img {
-		position: absolute;
-		right: 0;
+	&__shadow {
+		width: 343px;
+		height: 70px;
+		@include themed() {
+			background: url(../../../assets/images/nft/shadow.png);
+			background-size: 343px 70px;
+		}
+	}
+	&__prev {
+		background-color: transparent;
+		&::before {
+			font-size: 70px;
+			@include themed() {
+				color: t('surfStroke2');
+				text-shadow: 4px 8px 2px t('textAccent');
+			}
+		}
+	}
+	&__next {
+		background-color: transparent;
+		&::before {
+			display: block;
+			rotate: 180deg;
+			font-size: 70px;
+			@include themed() {
+				color: t('surfStroke2');
+				text-shadow: 4px -8px 2px t('textAccent');
+			}
+		}
 	}
 }
 
 .info {
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
-	width: 100%;
-	padding: 0 12px;
-	&__description {
-		@include fontStyle(32px, 400, 38px);
+	gap: 64px;
+	&__title {
+		@include fontSyncroneOblique;
+		@include fontStyle(96px, 400, 117x);
 		@include themed() {
 			color: t('textAccent');
 		}
 	}
 }
 
-.award {
+.skills {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
-	&__item {
-		height: 40px;
-		@include fontStyle(20px, 300, 24px);
+	gap: 32px;
+	&_damage {
+	}
+	&_rarity {
+	}
+	&_weapon {
+		margin-left: 35px;
+	}
+	&__title {
 		display: flex;
-		align-items: center;
-		gap: 12px;
-		padding: 0 10px 0 4px;
+		@include fontStyle(20px, 600, 30px);
+		padding: 10px;
 		&::before {
-			content:url(../../../assets/icons/gaming/chrystal.svg)
+			width: 24px;
+			height: 24px;
+			margin-right: 10px;
+		}
+		&_damage {
+			&::before {
+				content: '';
+				background: url(../../../assets/icons/gaming/lightning.png);
+				background-size: 24px;
+			}
+		}
+		&_rarity {
+			&::before {
+				content: url(../../../assets/icons/gaming/chrystal.svg);
+			}
+		}
+	}
+	&__level {
+		padding: 12px 18px;
+	}
+	&__kind {
+		@include fontStyle(16px, 600, 30px);
+		margin-left: 10px;
+		@include themed() {
+			color: t('textAccent');
 		}
 	}
 }

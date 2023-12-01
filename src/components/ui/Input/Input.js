@@ -69,7 +69,7 @@ export default function Input(props) {
 					disabled={props.isDisabled}
 				/>
 			)}
-			{props.type === 'password' && (
+			{/* {props.type === 'password' && (
 				<button
 					className={cn(s.field__password, 'icon_eye_close', {
 						[cn(s.field__password_show, 'icon_eye_open')]:
@@ -78,7 +78,7 @@ export default function Input(props) {
 					type={'button'}
 					onClick={showPassword}>
 				</button>
-			)}
+			)} */}
 		</div>
 	);
 }

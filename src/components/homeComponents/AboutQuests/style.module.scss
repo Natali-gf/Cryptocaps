@@ -1,0 +1,52 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables';
+@import '../style.module.scss';
+
+.quests {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	&__title {
+		position: relative;
+		@extend .title;
+		&::before {
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			height: 357px;
+			width: 444px;
+			display: block;
+			@include themed() {
+				background: t('starQuest');
+			}
+		}
+	}
+	&__block {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 94px 130px;
+		gap: 80px;
+		@include themed() {
+			background-color: t('surfPrim2');
+		}
+	}
+	&__description {
+		@include fontStyle(32px, 400, 38px);
+		@include themed() {
+			color: t('textAccent');
+		}
+	}
+	&__cards {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		& > img {
+			width: 212px;
+			height: 117px;
+		}
+	}
+}

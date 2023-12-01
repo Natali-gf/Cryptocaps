@@ -1,3 +1,4 @@
+import Authorization from '../components/Auth/Authorization';
 import LayoutAdmin from '../components/layouts/LayoutAdmin/LayoutAdmin';
 import LayoutMain from '../components/layouts/LayoutMain/LayoutMain';
 import LayoutProfile from '../components/layouts/LayoutProfile/LayoutProfile';

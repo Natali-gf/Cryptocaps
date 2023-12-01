@@ -38,7 +38,7 @@ function QuestsDetailPage() {
 			const partsEndDate = questbyId[0].dateEnd.slice(0, 10).split('-');
 			const dateStart = `${partsStartDate[2]}/${partsStartDate[1]}/${partsStartDate[0]}`;
 			const dateEnd = `${partsEndDate[2]}/${partsEndDate[1]}/${partsEndDate[0]}`;
-			console.log(questbyId[0].idPartner);
+
 			setPartnerId(questbyId[0].idPartner);
 			setQuest({...questbyId[0], dateStart: dateStart, dateEnd: dateEnd});
 		}

@@ -16,7 +16,7 @@ function QuestsGroup({quests, title}) {
 	const endIndex = (page * pageSize) + pageSize;
 	const startIndex = endIndex - pageSize;
 	const questsToShow = quests.slice(startIndex, endIndex);
-console.log(page)
+
 
 	return (
 		<BorderBlock className={s.quests}>
@@ -39,9 +39,6 @@ console.log(page)
 						<QuestCard
 							key={item.id}
 							quest={item}
-							onClick={() => {
-								console.log(item.id);
-							}}
 						/>
 					))}
 				</div>

@@ -15,7 +15,7 @@ function ProfilePage() {
 			<ProfileHeader title={'Account'} subtitle={'Profile'} />
 			<div className={s.content__main}>
 				<CustomLeadboard />
-				<Hint />
+				{/* <Hint /> */}
 			</div>
 		</main>
 	);

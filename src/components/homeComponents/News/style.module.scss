@@ -1,0 +1,79 @@
+@use '../../../styles/styles.scss' as *;
+@import '../../../styles/variables';
+@import '../style.module.scss';
+
+.game {
+	position: relative;
+	&__title {
+		@extend .title;
+		margin-bottom: 40px;
+	}
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 0 0 96px;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			border-radius: 24px;
+			@include themed() {
+
+			background:url(../../../assets/images/bg_game.jpg);
+			}
+			height: 560px;
+			width: 100%;
+			opacity: .2;
+		}
+	}
+	&__about {
+		width: 767px;
+		padding: 54px 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 54px;
+		z-index: 2;
+	}
+	&__store {
+		display: flex;
+		gap: 36px;
+	}
+	&__img {
+		position: absolute;
+		right: 0;
+	}
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	width: 100%;
+	padding: 0 12px;
+	&__description {
+		@include fontStyle(32px, 400, 38px);
+		@include themed() {
+			color: t('textAccent');
+		}
+	}
+}
+
+.award {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	&__item {
+		height: 40px;
+		@include fontStyle(20px, 300, 24px);
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 0 10px 0 4px;
+		@include themed() {
+			color: t('textPrimMain');
+		}
+		&::before {
+			content: url(../../../assets/icons/gaming/chrystal.svg);
+		}
+	}
+}

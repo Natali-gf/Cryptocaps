@@ -57,9 +57,9 @@
 		}
 	}
 	&_twitter {
-		background-color: $colorSocialTwitter;
 		&::before {
 			content: url(../../../assets/images/twitter.svg);
+			height: 100%;
 		}
 	}
 	&_telegram {

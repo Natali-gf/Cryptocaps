@@ -12,7 +12,7 @@ function QuestsPage() {
 			<ProfileHeader title={'Quests'} />
 			<div className={s.content__quests}>
 				<CustomQuests />
-				<Hint />
+				{/* <Hint /> */}
 			</div>
 		</main>
 	);

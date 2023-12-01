@@ -13,7 +13,7 @@ function LeaderboardPage() {
 			<ProfileHeader title={'Leaderboard'} />
 			<div className={s.content__main}>
 				<CustomLeadboard />
-				<Hint />
+				{/* <Hint /> */}
 			</div>
 			<div className={s.content__mascot}>
 				<img src={mascot} alt={'mascot'} />

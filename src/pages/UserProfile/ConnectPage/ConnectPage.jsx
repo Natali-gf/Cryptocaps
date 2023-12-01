@@ -16,9 +16,9 @@ function ConnectPage() {
 			<div className={s.content__main}>
 				<Accounts />
 				<div className={s.content__additional}>
-					<Hint className={s.content__hint}
-						children={'Сonnect different social media accounts to complete more tasks'}
-					/>
+					{/* <Hint className={s.content__hint} */}
+						{/* children={'Сonnect different social media accounts to complete more tasks'} */}
+					{/* /> */}
 				</div>
 				{/* </div> */}
 			</div>

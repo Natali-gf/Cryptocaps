@@ -6,32 +6,32 @@ import Button from '../../ui/buttons/Button/Button';
 import BorderBlock from '../../ui/tags/BorderBlock/BorderBlock';
 import Metamask from '../../Auth/Metamask/Metamask';
 
-const Binance = ({isConnected}) => (
+export const Binance = ({isConnected}) => (
 	<Button className={cn(s.account, s.account_binance)}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
-const Trust = ({isConnected}) => (
+export const Trust = ({isConnected}) => (
 	<Button className={cn(s.account, s.account_trust)}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
-const Phantom = ({isConnected}) => (
+export const Phantom = ({isConnected}) => (
 	<Button className={cn(s.account, s.account_phantom)}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
-const Discord = ({isConnected}) => (
+export const Discord = ({isConnected}) => (
 	<Button className={cn(s.account, s.account_discord)}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
-const Twitter = ({isConnected}) => (
+export const Twitter = ({isConnected}) => (
 	<Button className={cn(s.account, s.account_twitter)}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
-const Telegram = ({isConnected}) => (
+export const Telegram = ({isConnected}) => (
 	<Button className={cn(s.account, s.account_telegram)}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
@@ -48,7 +48,7 @@ function Accounts({title, subtitle, className}) {
 						<div className={s.accounts__title}>Connect Wallet</div>
 						<div className={s.accounts__list}>
 							<Binance isConnected={user[0].wallets.binance} />
-							<Metamask isConnected={user[0].wallets.metamask} />
+							<Metamask isConnected={true} />
 							<Trust isConnected={user[0].wallets.trust} />
 							<Phantom isConnected={user[0].wallets.phantom} />
 						</div>

@@ -17,16 +17,16 @@ function Mascot() {
 
 	return (
 		<>
-			<div>
-				{/* <img src='/0001-00300001-00302-unscreen.gif'></img> */}
-				<img src='/0001-00300001-00302-unscreen.gif'
-					className={cn(s.video)}
+			<div className={cn(s.mascot)}>
+				<img
+					src='/mascot_flying.gif'
+					className={s.mascot__animation}
 					autoPlay
 					loop
 					muted
 					playsInline
 					style={{
-						transition: `transform 12s ${slider > 5 ? 'linear':'ease-in-out'} `,
+						transition: `transform 12s ${slider > 5 ? 'linear' : 'ease-in-out'} `,
 						transform:
 							slider === 0
 								? 'translateX(-100px) scaleX(-1)'
@@ -53,10 +53,7 @@ function Mascot() {
 								: slider === 11
 								? 'translateY(-100px) translateX(-1000px) scaleX(-1)'
 								: 'translateX(-100px) scaleX(-1)',
-					}}>
-					{/* <source src='/0001-00300001-00302.mp4' type='video/mp4' />
-					Your browser does not support the video tag. */}
-				</img>
+					}}></img>
 			</div>
 		</>
 	);
