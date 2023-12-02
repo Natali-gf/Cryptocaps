@@ -78,15 +78,6 @@ export default function Header({className}) {
 				</ul>
 			</nav>
 			<div className={cn(s.header__auth, s.auth)}>
-				{/* <div className={s.temp}>
-					<ThemeSwitch />
-					<NavigationLink className={s.auth__button} to={'/admin/general'}>
-						{'admin '}
-					</NavigationLink>
-					<NavigationLink className={s.auth__button} to={'/account/leaderboard'}>
-						user
-					</NavigationLink>
-				</div> */}
 				{localStorage.authorization ? (
 					<Link
 						to={

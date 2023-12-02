@@ -26,7 +26,11 @@ const FormAuthorization = ({}) => {
 	const onSubmit = (data, e) => {
 		e.preventDefault();
 		console.log('log');
-		localStorage.setItem('authorization', 'admin');
+		if (data.email.includes('user')) {
+			localStorage.setItem('authorization', 'user');
+		} else if (data.email.includes('admin')) {
+			localStorage.setItem('authorization', 'admin');
+		}
 		setTimeout(() => {
 			dispatch(showAuthorization(false));
 		}, 500);
