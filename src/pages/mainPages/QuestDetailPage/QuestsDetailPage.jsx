@@ -54,18 +54,19 @@ function QuestsDetailPage() {
 			setPartner(partnerById[0]);
 		}
 	}, [partnerById]);
-console.log(user)
+	// console.log(user)
 	React.useEffect(() => {
 		if (user) {
+			console.log(user);
 			user[0].quests.some((el) => {
 				if (el.id === currentQuestId) {
-					console.log(el)
+					console.log(el);
 					setCurrentUserQuest(el);
 				}
 			});
 		}
 	}, [user]);
-
+	// console.log(currentUserQuest)
 	return (
 		<>
 			{quest && (
@@ -118,11 +119,14 @@ console.log(user)
 								<div className={s.description__text}>{quest.description}</div>
 							</BorderBlock>
 							<BorderBlock className={s.detail}>
-								<QuestSteps step={currentUserQuest.step} status={quest.status} />
+								<QuestSteps
+									{...(currentUserQuest ? {step: currentUserQuest.step} : {})}
+									status={quest.status}
+								/>
 								<TaskView network={quest.social} awards={quest.awards} />
 							</BorderBlock>
 							<CheckButton
-								step={currentUserQuest.step}
+								{...(currentUserQuest ? {step: currentUserQuest.step} : {})}
 								questSite={quest.website}
 								userWallets={user[0].wallets}
 							/>

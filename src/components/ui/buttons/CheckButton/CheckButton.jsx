@@ -6,7 +6,7 @@ import {QuestStep} from '../../../../core/constants/Quest';
 import {Link} from 'react-router-dom';
 
 function CheckButton({step, userWallets, requiredWallet, questSite}) {
-	
+
 	 if (step === QuestStep.NotStarted) {
 		return (
 			<Link
