@@ -15,6 +15,7 @@ import {
 } from '../../../core/constants/data/questForm';
 import Checkbox from '../../ui/Checkbox/Checkbox';
 import Textarea from '../../ui/Textarea/Textarea';
+import { Link } from 'react-router-dom';
 
 export const taskFormFields = [
 	'name',
@@ -31,6 +32,8 @@ function FormTask() {
 	const dispatch = useDispatch();
 	// const { filmData, errorView } = useSelector(state => state.films);
 	const [fieldKeyWords, setFieldKeyWords] = React.useState(false);
+	const [fieldNft, setFieldNft] = React.useState(false);
+	const [fieldImg, setFieldImg] = React.useState(false);
 
 	const {
 		register,
@@ -132,12 +135,8 @@ function FormTask() {
 					</div>
 					<div className={cn(s.form__field, s.field, s.field_term)}>
 						<div className={s.field__title}>Start date:</div>
-						<div className={cn(s.field__subtitle_date, s.field__subtitle)}>
-							Date:
-						</div>
-						<div className={cn(s.field__subtitle_time, s.field__subtitle)}>
-							Time:
-						</div>
+						<div className={cn(s.field__subtitle_date, s.field__subtitle)}>Date:</div>
+						<div className={cn(s.field__subtitle_time, s.field__subtitle)}>Time:</div>
 						<Input
 							className={cn(s.field__input, s.field__input_date)}
 							placeholder={'0000-00-00'}
@@ -189,12 +188,8 @@ function FormTask() {
 					</div>
 					<div className={cn(s.form__field, s.field, s.field_term)}>
 						<div className={s.field__title}>End date:</div>
-						<div className={cn(s.field__subtitle_date, s.field__subtitle)}>
-							Date:
-						</div>
-						<div className={cn(s.field__subtitle_time, s.field__subtitle)}>
-							Time:
-						</div>
+						<div className={cn(s.field__subtitle_date, s.field__subtitle)}>Date:</div>
+						<div className={cn(s.field__subtitle_time, s.field__subtitle)}>Time:</div>
 						<Input
 							className={cn(s.field__input, s.field__input_date)}
 							placeholder={'0000-00-00'}
@@ -256,17 +251,19 @@ function FormTask() {
 					</div>
 					<div className={cn(s.form__field, s.field)}>
 						<div className={s.field__title}>Taskpic:</div>
-						<div className={cn(s.field__input, s.field__input_nft)}>
+						<div className={cn(s.field__input, s.field__input_img)}>
 							<input
-								name='file'
+								name='fileImg'
 								type='file'
 								accept='image*'
 								id='fieldNft'
-								onChange={(e) => {}}
+								onChange={(e) =>
+									setFieldNft(e.target.value.match(/\\([^\\]+)$/)[0].slice(1))
+								}
 							/>
 							<label className={cn(s.field__label, s.label)}>
 								<div className={s.label__uploadButton}>Upload a file</div>
-								<div className={s.label__text}>{'File not selected'}</div>
+								<div className={s.label__text}>{fieldNft || 'File not selected'}</div>
 							</label>
 						</div>
 					</div>
@@ -303,15 +300,17 @@ function FormTask() {
 						<Checkbox className={s.field__check_nft} children={'NFT'} />
 						<div className={cn(s.field__input, s.field__input_nft)}>
 							<input
-								name='file'
+								name='fileNft'
 								type='file'
 								accept='image*'
 								id='fieldNft'
-								onChange={(e) => {}}
+								onChange={(e) =>
+									setFieldImg(e.target.value.match(/\\([^\\]+)$/)[0].slice(1))
+								}
 							/>
 							<label className={cn(s.field__label, s.label)}>
 								<div className={s.label__uploadButton}>Upload a file</div>
-								<div className={s.label__text}>{'File not selected'}</div>
+								<div className={s.label__text}>{fieldImg || 'File not selected'}</div>
 							</label>
 						</div>
 						<Checkbox className={s.field__check_points} children={'Points'} />
@@ -335,13 +334,10 @@ function FormTask() {
 					</div>
 				</div>
 				<div className={cn(s.form__buttons)}>
-					<Button className={cn(s.button_submit)} htmltype='submit'>
+					<Link to={'/admin/plan'} className={cn(s.button_submit)} htmltype='submit'>
 						Save
-					</Button>
-					<Button
-						className={cn(s.button_submit)}
-						htmltype='submit'
-						onClick={() => {}}>
+					</Link>
+					<Button className={cn(s.button_submit)} htmltype='submit' onClick={() => {}}>
 						Save and add another
 					</Button>
 				</div>

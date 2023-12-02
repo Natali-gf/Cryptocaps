@@ -8,9 +8,9 @@
 	}
 	display: flex;
 	align-items: center;
-	padding: 12px;
+	padding: 12px 24px;
 	border-radius: 24px;
-	width: 144px;
+	width: fit-content;
 	@include fontStyle(18px, 500, 18px);
 	&::before {
 		justify-content: flex-start;

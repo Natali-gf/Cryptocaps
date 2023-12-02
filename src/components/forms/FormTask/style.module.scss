@@ -46,7 +46,7 @@
 		row-gap: 16px;
 		grid-template-areas:
 			'title token inputT . 		 .'
-			'title nft 	 input  input  .'
+			'title nft 	 inputN inputN .'
 			'title point inputP . 		 .';
 	}
 	&__title {
@@ -65,24 +65,53 @@
 		align-self: center;
 		&_date {
 			grid-area: subDate;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
 		}
 		&_time {
 			grid-area: subTime;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
 		}
 	}
 	&__input {
 		grid-area: input;
 		&_date {
 			grid-area: date;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
 		}
 		&_time {
 			grid-area: time;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
+		}
+		&_img {
+			& > input {
+				width: 212px;
+				height: 48px;
+				opacity: 0;
+				// visibility: hidden;
+				position: absolute;
+			}
 		}
 		&_token {
 			grid-area: inputT;
 		}
 		&_nft {
-			grid-area: input;
+			grid-area: inputN;
 			& > input {
 				width: 212px;
 				height: 48px;
@@ -118,9 +147,19 @@
 		gap: 8px;
 		&_date {
 			grid-area: toolDate;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
 		}
 		&_time {
 			grid-area: toolTime;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
 		}
 	}
 }
@@ -145,6 +184,9 @@
 		}
 		@include blockCenter;
 		@include fontStyle(14px, 400);
+	}
+	&_nft {
+		// grid-area: label;
 	}
 }
 
@@ -180,9 +222,19 @@
 		}
 		&_date {
 			background-color: transparent;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
 		}
 		&_time {
 			background-color: transparent;
+			&::before {
+				@include themed() {
+					color: t('textMain');
+				}
+			}
 		}
 	}
 	&__separator {

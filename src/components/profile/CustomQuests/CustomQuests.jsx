@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './style.module.scss';
 import cn from 'classnames';
-import {QuestStatus} from '../../../core/constants/Quest';
+import {QuestStatus, QuestStep} from '../../../core/constants/Quest';
 import QuestCard from '../../cards/QuestCard/QuestCard';
 import {userApi} from '../../../core/store/services/userApi';
 import Tabs from '../../ui/Tabs/Tabs';
@@ -9,7 +9,23 @@ import Tabs from '../../ui/Tabs/Tabs';
 function CustomQuests({title, subtitle, className}) {
 	const [customPeriod, setCustomPeriod] = React.useState(QuestStatus.Finished);
 	const {data: user} = userApi.useFetchUserQuery();
-	console.log(user);
+	const [currentUserQuest, setCurrentUserQuest] = React.useState(null);
+
+	// const {data: user} = userApi.useFetchUserQuery();
+
+
+	React.useEffect(() => {
+		if (user) {
+			// user[0].quests.some((el) => {
+			// 	if (el.id === currentQuestId) {
+			// 		console.log(el)
+			// 		setCurrentUserQuest(el);
+			// 	}
+			// });
+		}
+	}, [user]);
+
+
 	const tabs = [
 		{
 			title: 'Finished',
@@ -38,8 +54,9 @@ function CustomQuests({title, subtitle, className}) {
 							customPeriod === QuestStatus.Active
 								? item.status === QuestStatus.Active
 								: customPeriod === QuestStatus.Inactive
-								? item.status === customPeriod
-								: item.isDone
+								? item.status === QuestStatus.Inactive
+								: item.step === QuestStep.Rewarded && item.status === QuestStatus.Finished
+								// customPeriod === QuestStatus.Finished ?
 						)
 						.map((item) => <QuestCard key={item.id} quest={item} isUserQuest={true} />)}
 			</div>

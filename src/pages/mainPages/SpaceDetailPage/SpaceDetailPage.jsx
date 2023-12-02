@@ -19,6 +19,10 @@ function SpaceDetailPage() {
 	const {data: partner} = partnersApi.useFetchPartnerByIdQuery(currentPartnerId);
 	const {data: users} = userApi.useFetchLeadersQuery();
 
+	React.useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}, []);
+
 	return (
 		<>
 			<main className={cn(s.content)}>
@@ -40,7 +44,7 @@ function SpaceDetailPage() {
 							<div className={cn(s.content__quests, s.quests)}>
 								<div className={s.quests__panel}>
 									<div className={s.quests__title}>Quests</div>
-									<Filters />
+									{/* <Filters /> */}
 								</div>
 								<BorderBlock className={s.quests__list}>
 									{partner[0].quests.map((item) => (

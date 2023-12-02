@@ -14,7 +14,7 @@ function ProfilePage() {
 		<main className={cn(s.wrapper__content, s.content)}>
 			<ProfileHeader title={'Account'} subtitle={'Profile'} />
 			<div className={s.content__main}>
-				<CustomLeadboard />
+				{/* <CustomLeadboard /> */}
 				{/* <Hint /> */}
 			</div>
 		</main>

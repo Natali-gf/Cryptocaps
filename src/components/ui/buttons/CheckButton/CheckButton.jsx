@@ -6,24 +6,8 @@ import {QuestStep} from '../../../../core/constants/Quest';
 import {Link} from 'react-router-dom';
 
 function CheckButton({step, userWallets, requiredWallet, questSite}) {
-
-	if (!userWallets) {
-		return (
-			<Link
-				className={cn(s.button, s.button_unauthorized)}
-				to={'/authorization'}
-				children={'Log in to start'}
-			/>
-		);
-	} else if (!userWallets[requiredWallet]) {
-		return (
-			<Link
-				className={cn(s.button, s.button_progress)}
-				to={'/account/user/connect'}
-				children={'Connect wallet'}
-			/>
-		);
-	} else if (step === QuestStep.NotStarted) {
+	
+	 if (step === QuestStep.NotStarted) {
 		return (
 			<Link
 				className={cn(s.button, s.button_progress)}
@@ -56,6 +40,22 @@ function CheckButton({step, userWallets, requiredWallet, questSite}) {
 				className={cn(s.button, s.button_error)}
 				onClick={() => console.log('Confirm')}
 				children={'Confirm'}
+			/>
+		);
+	} else if (!userWallets) {
+		return (
+			<Link
+				className={cn(s.button, s.button_unauthorized)}
+				to={'/authorization'}
+				children={'Log in to start'}
+			/>
+		);
+	} else if (!userWallets[requiredWallet]) {
+		return (
+			<Link
+				className={cn(s.button, s.button_progress)}
+				to={'/account/user/connect'}
+				children={'Connect wallet'}
 			/>
 		);
 	} else {

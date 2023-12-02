@@ -6,6 +6,7 @@ import MainBoard from './MainBoard';
 import SearchPanel from '../../../components/SearchPanel/SearchPanel';
 import Tabs from '../../../components/ui/Tabs/Tabs';
 import QuestsGroup from '../../../components/cards/groups/QuestsGroup/QuestsGroup';
+import Leaderboard from '../../../components/Leaderboard/Leaderboard';
 
 function QuestsPage() {
 	const [activeTab, setActiveTab] = React.useState(true);
@@ -17,23 +18,33 @@ function QuestsPage() {
 
 	const tabs = [
 		{title: 'All', onClick: () => setActiveTab(true), isActive: activeTab},
-		{title: 'Following', onClick: () => setActiveTab(false), isActive: !activeTab},
+		{title: 'Leaderboard', onClick: () => setActiveTab(false), isActive: !activeTab},
 	];
+
+	React.useEffect(() => {
+		window.scrollTo({top: 0, behavior: 'smooth'});
+	}, []);
 
 	return (
 		<main className={cn(s.content)}>
 			<MainBoard />
-			<Tabs className={s.content__tabs} tabs={tabs}/>
-			<SearchPanel />
-			{questsBeginner && (
-				<QuestsGroup quests={questsBeginner} title={'Styding for beginners'} />
-			)}
-			{questsFirst && (
-				<QuestsGroup quests={questsFirst} title={'First Adventure'} />
-			)}
-			{questsNext && <QuestsGroup quests={questsNext} title={'Next step'} />}
-			{questsExplore && (
-				<QuestsGroup quests={questsExplore} title={'Explore news'} />
+			<Tabs className={s.content__tabs} tabs={tabs} />
+			{/* <SearchPanel /> */}
+			{activeTab ? (
+				<>
+					{questsBeginner && (
+						<QuestsGroup quests={questsBeginner} title={'Styding for beginners'} />
+					)}
+					{questsFirst && (
+						<QuestsGroup quests={questsFirst} title={'First Adventure (beginner)'} />
+					)}
+					{questsNext && <QuestsGroup quests={questsNext} title={'Next step (medium)'} />}
+					{questsExplore && (
+						<QuestsGroup quests={questsExplore} title={'Explore news (expert)'} />
+					)}
+				</>
+			) : (
+				<Leaderboard className={s.content__leaders} />
 			)}
 		</main>
 	);

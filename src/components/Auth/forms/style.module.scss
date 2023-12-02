@@ -19,6 +19,9 @@
 	&__link {
 		align-self: flex-end;
 		margin-top: -40px;
+		@include themed() {
+			color: t('textMain');
+		}
 	}
 	&__btnSubmit {
 		padding: 20px 80px;

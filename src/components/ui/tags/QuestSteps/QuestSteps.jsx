@@ -5,6 +5,7 @@ import {QuestStatus, QuestStep} from '../../../../core/constants/Quest';
 import BorderTag from '../BorderTag/BorderTag';
 
 function QuestSteps({className, step, status, ...props}) {
+	console.log(step)
 	return (
 		<div className={cn(s.path, className)} {...props}>
 			<BorderTag

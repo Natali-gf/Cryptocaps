@@ -19,6 +19,7 @@
 		align-items: center;
 		gap: 31px;
 	}
+	z-index: 10;
 }
 
 .navigation {
@@ -37,9 +38,11 @@
 		display: flex;
 		opacity: 0;
 		position: absolute;
-		top: 0;
+		top: 100px;
 		margin: 0 0 0 -50px;
 		transition: 0.5s;
+		z-index: 5;
+		user-select: none;
 	}
 	&__item {
 		display: flex;
@@ -59,7 +62,7 @@
 				& > .navigation__submenu {
 					opacity: 1;
 					transition: 0.5s;
-					top: 99px;
+					user-select: none;
 				}
 				&::after {
 					margin-left: 10px;

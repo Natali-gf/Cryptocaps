@@ -32,7 +32,7 @@
 		margin-right: 60px;
 		@include fontStyle(20px, 400, 24px);
 	}
-	&__button {
+	&__link {
 		@include fontStyle(20px, 500, 24px);
 		width: fit-content;
 		padding: 22px 42px;
@@ -40,6 +40,7 @@
 		margin-left: 27px;
 		@include themed() {
 			background-color: t('bgBtnMain');
+			color: t('textMainBack')
 		}
 	}
 }

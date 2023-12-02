@@ -4,15 +4,19 @@ import s from './style.module.scss';
 
 function RewardType({className, awards, ...props}) {
 	const children = [
-		awards.nft ? 'nft' : '',
+		awards.nft ? 'NFT' : '',
 		awards.token ? 'token' : '',
 		awards.xp ? 'points' : '',
 	].join(' / ');
-	
+
 	return (
-		<div className={cn(s.experience, className)} {...props}>
-			{children}
-		</div>
+		<>
+			{awards.nft && (
+				<div className={cn(s.award, className)} {...props}>
+					NFT
+				</div>
+			)}
+		</>
 	);
 }
 

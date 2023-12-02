@@ -2,11 +2,16 @@
 @import '../../styles/variables.scss';
 
 .auth {
+	padding-bottom: 40px;
 	margin: 0 auto;
 	width: $sizeContainer;
 	display: flex;
 	flex-direction: column;
 	gap: 90px;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0;
+	}
 	&__title {
 		align-self: flex-start;
 		font-size: 40px;
@@ -15,7 +20,7 @@
 		@include themed() {
 			color: t('textMain');
 		}
-		// margin-bottom: 48px;
+		margin-bottom: 24px;
 	}
 	&__description {
 		font-size: 20px;
@@ -80,6 +85,7 @@
 			width: 34px;
 			height: 34px;
 			display: block;
+			margin-right: 24px;
 		}
 	}
 	&_binance {

@@ -22,13 +22,14 @@ export const questsApi = createApi({
 			})
 		}),
 		fetchQuestsBeginner: build.query({
-			query: (page = 1, limit = 2) => ({
+			query: (page = 1, limit = 10) => ({
 				url: `/quests`,
 				params: {
-					// _page: page,
-					// _limit: limit,
-					purpose: 1,
+					// purpose: 1,
 					difficulty: 0,
+					status: 1,
+					_page: page,
+					_limit: limit,
 				}
 			})
 		}),
@@ -38,8 +39,9 @@ export const questsApi = createApi({
 				params: {
 					// _page: page,
 					// _limit: limit,
-					purpose: 2,
+					// purpose: 2,
 					difficulty: 0,
+					status: 1
 				}
 			})
 		}),
@@ -49,8 +51,9 @@ export const questsApi = createApi({
 				params: {
 					// _page: page,
 					// _limit: limit,
-					purpose: 3,
+					// purpose: 3,
 					difficulty: 1,
+					status: 1
 				}
 			})
 		}),
@@ -60,8 +63,9 @@ export const questsApi = createApi({
 				params: {
 					// _page: page,
 					// _limit: limit,
-					purpose: 4,
+					// purpose: 4,
 					difficulty: 2,
+					status: 1
 				}
 			})
 		}),

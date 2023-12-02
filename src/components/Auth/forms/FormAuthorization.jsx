@@ -6,8 +6,11 @@ import {useDispatch} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import Button from '../../ui/buttons/Button/Button';
 import CheckboxGroup from '../../ui/Checkbox/Checkbox';
-import { Discord, Telegram, Twitter } from '../../profile/Accounts/Accounts';
-import { showAuthorization, statePopupWindow } from '../../../core/store/slices/windowStateSlice';
+import {Discord, Telegram, Twitter} from '../../profile/Accounts/Accounts';
+import {
+	showAuthorization,
+	statePopupWindow,
+} from '../../../core/store/slices/windowStateSlice';
 
 const FormAuthorization = ({}) => {
 	const dispatch = useDispatch();
@@ -24,8 +27,10 @@ const FormAuthorization = ({}) => {
 		e.preventDefault();
 		console.log(data);
 		localStorage.setItem('authorization', 'admin');
+		setTimeout(() => {
+			dispatch(showAuthorization(false));
+		}, 500);
 		// window.location.assign('/')
-		dispatch(showAuthorization(false))
 		// window.location.href = '/';
 	};
 
@@ -46,15 +51,13 @@ const FormAuthorization = ({}) => {
 				register={register}
 				type={'password'}
 			/>
-			<div className={s.form__link}>
-				Forgot password?
+			<div className={s.form__link}>Forgot password?</div>
+			<div className={s.accounts__list}>
+				<Discord />
+				<Twitter />
+				<Telegram />
 			</div>
-						<div className={s.accounts__list}>
-							<Discord />
-							<Twitter  />
-							<Telegram />
-						</div>
-			<Button className={s.form__btnSubmit} type='submit' >
+			<Button className={s.form__btnSubmit} type='submit'>
 				Войти
 			</Button>
 		</form>

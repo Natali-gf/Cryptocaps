@@ -4,7 +4,7 @@ import s from './style.module.scss';
 import {Link} from 'react-router-dom';
 import Experience from '../../ui/tags/Experience/Experience';
 
-function QuestCard({quest, isUserQuest, isPreview, ...props}) {
+function QuestCard({quest, usersQuests, isUserQuest, isPreview, ...props}) {
 	return (
 		<Link
 			className={s.card}
@@ -25,7 +25,7 @@ function QuestCard({quest, isUserQuest, isPreview, ...props}) {
 						{quest.awards.nft && <div className={s.awards__nft}></div>}
 					</div>
 					{isUserQuest &&
-						(quest.isDone === true ? (
+						(quest.step === 2 ? (
 							<div className={s.info__done}>Success</div>
 						) : (
 							<div className={s.info__notDone}>Declined</div>

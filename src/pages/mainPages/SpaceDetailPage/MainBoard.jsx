@@ -7,7 +7,8 @@ import Button from '../../../components/ui/buttons/Button/Button';
 import {Link} from 'react-router-dom';
 
 function MainBoard({partner}) {
-	console.log(partner);
+	const [subscribe, setSubscribe] = React.useState(false);
+
 	return (
 		<BorderBlock className={cn(s.mainBoard)}>
 			<div className={s.mainBoard__bg}></div>
@@ -22,7 +23,7 @@ function MainBoard({partner}) {
 								<div className={s.partner__name}>{partner.name}</div>
 								<div className={s.partner__description}>{partner.shortDescription}</div>
 							</div>
-							<SubscribeButton />
+							<SubscribeButton isSubscribed={subscribe} onClick={() => setSubscribe(!subscribe)} />
 						</div>
 					</div>
 					<div className={cn(s.info__socials, s.socials)}>

@@ -39,7 +39,7 @@ function App() {
 			<Route path='/admin' element={<LayoutAdmin />}>
 				<Route path='general' element={<GeneralPage />} />
 				<Route path='tasks' element={<TasksPage />} />
-				<Route path='plan' element={<LeaderboardPage />} />
+				<Route path='plan' element={<div />} />
 				<Route path='quests' element={<ProfileQuestsPage />} />
 			</Route>
 		</Routes>

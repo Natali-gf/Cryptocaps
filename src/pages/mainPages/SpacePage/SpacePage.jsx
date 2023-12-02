@@ -6,6 +6,7 @@ import Tabs from '../../../components/ui/Tabs/Tabs';
 import SearchPanel from '../../../components/SearchPanel/SearchPanel';
 import PartnersGroup from '../../../components/cards/groups/PartnersGroup/PartnersGroup';
 import {partnersApi} from '../../../core/store/services/partnersApi';
+import Leaderboard from '../../../components/Leaderboard/Leaderboard';
 
 function SpacePage() {
 	const [activeTab, setActiveTab] = React.useState(true);
@@ -30,23 +31,32 @@ function SpacePage() {
 		{title: 'All', onClick: () => setActiveTab(true), isActive: activeTab},
 		{title: 'Following', onClick: () => setActiveTab(false), isActive: !activeTab},
 	];
-	React.useEffect(() => {}, []);
+
+	React.useEffect(() => {
+		window.scrollTo({top: 0, behavior: 'smooth'});
+	}, []);
 
 	return (
 		<>
 			<main className={cn(s.content)}>
 				<MainBoard />
 				<Tabs className={s.content__tabs} tabs={tabs} />
-				<SearchPanel />
-				<h3 className={s.content__title}>With the most followers</h3>
-				{partnersMostFollowers && <PartnersGroup partners={partnersMostFollowers} />}
-				<h3 className={s.content__title}>Verified spaces</h3>
-				{partnersVerified && <PartnersGroup partners={partnersVerified} />}
-				<h3 className={s.content__title}>Latest spaces</h3>
-				{partnersLatest && <PartnersGroup partners={partnersLatest} />}
-				<h3 className={s.content__title}>Expand your bounders</h3>
-				{partnersOther && <PartnersGroup partners={partnersOther} />}
-				<h3 className={s.content__title}>Show full list...</h3>
+				{/* <SearchPanel /> */}
+				{activeTab ? (
+					<>
+						<h3 className={s.content__title}>With the most followers</h3>
+						{partnersMostFollowers && <PartnersGroup partners={partnersMostFollowers} />}
+						<h3 className={s.content__title}>Verified spaces</h3>
+						{partnersVerified && <PartnersGroup partners={partnersVerified} />}
+						<h3 className={s.content__title}>Latest spaces</h3>
+						{partnersLatest && <PartnersGroup partners={partnersLatest} />}
+						<h3 className={s.content__title}>Expand your bounders</h3>
+						{partnersOther && <PartnersGroup partners={partnersOther} />}
+						<h3 className={s.content__title_last}>Show full list...</h3>
+					</>
+				) : (
+					<Leaderboard className={s.content__leaders} isPartners={true} />
+				)}
 			</main>
 		</>
 	);

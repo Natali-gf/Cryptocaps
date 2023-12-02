@@ -15,6 +15,11 @@ import {Link} from 'react-router-dom';
 const mainSubtitle = `strive for the win - keep to the rhythm - trust your skill - not the algorithm`;
 
 function HomePage() {
+	
+	React.useEffect(() => {
+		window.scrollTo({top: 0, behavior: 'smooth'});
+	}, []);
+
 	return (
 		<>
 			<AnimationCanvas />

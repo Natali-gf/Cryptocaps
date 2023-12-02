@@ -27,6 +27,7 @@ function QuestsDetailPage() {
 	const [quest, setQuest] = React.useState(null);
 	const [partner, setPartner] = React.useState(null);
 	const [partnerId, setPartnerId] = React.useState(null);
+	const [currentUserQuest, setCurrentUserQuest] = React.useState(null);
 
 	const {data: user} = userApi.useFetchUserQuery();
 	const {data: questbyId} = questsApi.useFetchQuestByIdQuery(currentQuestId);
@@ -45,10 +46,25 @@ function QuestsDetailPage() {
 	}, [questbyId]);
 
 	React.useEffect(() => {
+		window.scrollTo({top: 0, behavior: 'smooth'});
+	}, []);
+
+	React.useEffect(() => {
 		if (partnerById) {
 			setPartner(partnerById[0]);
 		}
 	}, [partnerById]);
+console.log(user)
+	React.useEffect(() => {
+		if (user) {
+			user[0].quests.some((el) => {
+				if (el.id === currentQuestId) {
+					console.log(el)
+					setCurrentUserQuest(el);
+				}
+			});
+		}
+	}, [user]);
 
 	return (
 		<>
@@ -65,11 +81,9 @@ function QuestsDetailPage() {
 								<div className={cn(s.company__avatar)}>
 									{partner && <img src={partner.logo} alt={partner.name} />}
 								</div>
-								{partner && (
-									<div className={cn(s.company__name)}>{partner.name}</div>
-								)}
+								{partner && <div className={cn(s.company__name)}>{partner.name}</div>}
 							</div>
-							<SubscribeButton className={s.quest__subs} isSubscribed={false} />
+							{/* <SubscribeButton className={s.quest__subs} isSubscribed={false} /> */}
 							<Experience className={s.quest__xp} children={quest.awards.xp} />
 						</div>
 						<div className={s.info}>
@@ -94,9 +108,7 @@ function QuestsDetailPage() {
 						<div className={s.questPart}>
 							<BorderBlock className={s.description}>
 								<div className={s.description__date}>
-									<div className={cn(s.date, s.date_start)}>
-										{quest.dateStart}
-									</div>
+									<div className={cn(s.date, s.date_start)}>{quest.dateStart}</div>
 									<div className={cn(s.date, s.date_end, 'icon_arrow_towards')}>
 										{quest.dateEnd}
 									</div>
@@ -106,11 +118,11 @@ function QuestsDetailPage() {
 								<div className={s.description__text}>{quest.description}</div>
 							</BorderBlock>
 							<BorderBlock className={s.detail}>
-								<QuestSteps step={quest.step} status={quest.status} />
+								<QuestSteps step={currentUserQuest.step} status={quest.status} />
 								<TaskView network={quest.social} awards={quest.awards} />
 							</BorderBlock>
 							<CheckButton
-								step={quest.step}
+								step={currentUserQuest.step}
 								questSite={quest.website}
 								userWallets={user[0].wallets}
 							/>
