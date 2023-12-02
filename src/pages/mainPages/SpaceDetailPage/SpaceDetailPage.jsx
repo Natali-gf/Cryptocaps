@@ -17,7 +17,7 @@ function SpaceDetailPage() {
 	const currentPartnerId = currentPath.match(/\/([^/]+)$/)[1];
 
 	const {data: partner} = partnersApi.useFetchPartnerByIdQuery(currentPartnerId);
-	const {data: users} = userApi.useFetchLeadersQuery();
+	const {data: users} = userApi.useFetchLeadersQuery({limit: 20});
 
 	React.useEffect(() => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });

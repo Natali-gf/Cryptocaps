@@ -16,4 +16,22 @@
 	@include themed() {
 		background: t('bgNoise'), t('bg');
 	}
+	&__close {
+		position: absolute;
+		top: 32px;
+		right: 32px;
+		padding: 7px;
+		background: none;
+		border: none;
+		&::before {
+			@include themed() {
+				color: t('textMain');
+			}
+			content: '\00D7';
+			color: #A7A7A7;
+			font-size: 50px;
+			font-weight: 500;
+			@include flex-grid(flex, null, center, center);
+		}
+	}
 }

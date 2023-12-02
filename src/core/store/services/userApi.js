@@ -22,11 +22,11 @@ export const userApi = createApi({
 			})
 		}),
 		fetchLeaders: build.query({
-			query: () => ({
+			query: ({limit = 10}) => ({
 				url: `/users`,
 				params: {
 					_page: 1,
-					_limit: 10,
+					_limit: limit,
 					_sort: 'xp',
 					_order: 'desc',
 					isAdmin: false,
