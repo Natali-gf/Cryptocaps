@@ -7,37 +7,37 @@ import BorderBlock from '../../ui/tags/BorderBlock/BorderBlock';
 import Metamask from '../../Auth/Metamask/Metamask';
 
 export const Binance = ({isConnected}) => (
-	<Button className={cn(s.account, s.account_binance)}>
+	<Button className={cn(s.account, s.account_binance)} type={'button'}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
 export const Trust = ({isConnected}) => (
-	<Button className={cn(s.account, s.account_trust)}>
+	<Button className={cn(s.account, s.account_trust)} type={'button'}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
 export const Phantom = ({isConnected}) => (
-	<Button className={cn(s.account, s.account_phantom)}>
+	<Button className={cn(s.account, s.account_phantom)} type={'button'}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
 export const Discord = ({isConnected}) => (
-	<Button className={cn(s.account, s.account_discord)}>
+	<Button className={cn(s.account, s.account_discord)} type={'button'}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
 export const Twitter = ({isConnected}) => (
-	<Button className={cn(s.account, s.account_twitter)}>
+	<Button className={cn(s.account, s.account_twitter)} type={'button'}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
 export const Telegram = ({isConnected}) => (
-	<Button className={cn(s.account, s.account_telegram)}>
+	<Button className={cn(s.account, s.account_telegram)} type={'button'}>
 		{isConnected && <div className={s.account__connected}></div>}
 	</Button>
 );
 
-function Accounts({title, subtitle, className}) {
+function Accounts({className}) {
 	const {data: user} = userApi.useFetchUserQuery();
 
 	return (

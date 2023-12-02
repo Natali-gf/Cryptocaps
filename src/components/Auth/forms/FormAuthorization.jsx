@@ -42,6 +42,12 @@ const FormAuthorization = ({}) => {
 				nameField={'email'}
 				setValue={setValue}
 				register={register}
+				validation={{
+					required: 'Required!',
+					pattern:
+						/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+					minLength: 6,
+				}}
 			/>
 			<Input
 				className={s.form__field}
@@ -50,6 +56,11 @@ const FormAuthorization = ({}) => {
 				setValue={setValue}
 				register={register}
 				type={'password'}
+				validation={{
+					required: 'Required!',
+					pattern: {value: /^[A-Za-z0-9_\-.@]+$/},
+					minLength: 6,
+				}}
 			/>
 			<div className={s.form__link}>Forgot password?</div>
 			<div className={s.accounts__list}>
@@ -58,7 +69,7 @@ const FormAuthorization = ({}) => {
 				<Telegram />
 			</div>
 			<Button className={s.form__btnSubmit} type='submit'>
-				Войти
+				Log in
 			</Button>
 		</form>
 	);

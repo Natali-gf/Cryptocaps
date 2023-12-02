@@ -6,25 +6,9 @@ import QuestCard from '../../cards/QuestCard/QuestCard';
 import {userApi} from '../../../core/store/services/userApi';
 import Tabs from '../../ui/Tabs/Tabs';
 
-function CustomQuests({title, subtitle, className}) {
+function CustomQuests({className}) {
 	const [customPeriod, setCustomPeriod] = React.useState(QuestStatus.Finished);
 	const {data: user} = userApi.useFetchUserQuery();
-	const [currentUserQuest, setCurrentUserQuest] = React.useState(null);
-
-	// const {data: user} = userApi.useFetchUserQuery();
-
-
-	React.useEffect(() => {
-		if (user) {
-			// user[0].quests.some((el) => {
-			// 	if (el.id === currentQuestId) {
-			// 		console.log(el)
-			// 		setCurrentUserQuest(el);
-			// 	}
-			// });
-		}
-	}, [user]);
-
 
 	const tabs = [
 		{
@@ -56,7 +40,6 @@ function CustomQuests({title, subtitle, className}) {
 								: customPeriod === QuestStatus.Inactive
 								? item.status === QuestStatus.Inactive
 								: item.step === QuestStep.Rewarded && item.status === QuestStatus.Finished
-								// customPeriod === QuestStatus.Finished ?
 						)
 						.map((item) => <QuestCard key={item.id} quest={item} isUserQuest={true} />)}
 			</div>

@@ -67,6 +67,14 @@
 			height: 100%;
 		}
 	}
+	// &_metamask {
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	&::before {
+	// 		content: url(../../../assets/images/telegram.svg);
+	// 		height: 100%;
+	// 	}
+	// }
 
 	&__connected {
 		position: absolute;
@@ -82,4 +90,5 @@
 			content: url(../../../assets/images/done.svg);
 		}
 	}
+
 }
