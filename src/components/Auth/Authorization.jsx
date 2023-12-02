@@ -24,8 +24,9 @@ function Authorization({changeAuthorizationForm}) {
 				<Link className={cn(s.social, s.social_metamask)} to='#'>
 					<img className={s.social__img} src={IconM} />
 					<div className={s.social__text}>
-						<Metamask/>
-						Metamask</div>
+						<Metamask />
+						Metamask
+					</div>
 				</Link>
 				<Link className={cn(s.social, s.social_trust)} to='#'>
 					<img className={s.social__img} src={IconT} />
@@ -36,9 +37,9 @@ function Authorization({changeAuthorizationForm}) {
 					<div className={s.social__text}>Binance</div>
 				</Link>
 			</div>
-			<button className={s.auth__btn} onClick={() => changeAuthorizationForm(false)}>
+			<Button className={s.auth__btn} onClick={() => changeAuthorizationForm(false)}>
 				I don’t have wallet
-			</button>
+			</Button>
 		</>
 	);
 }

@@ -25,7 +25,7 @@ const FormAuthorization = ({}) => {
 
 	const onSubmit = (data, e) => {
 		e.preventDefault();
-		console.log(data);
+		console.log('log');
 		localStorage.setItem('authorization', 'admin');
 		setTimeout(() => {
 			dispatch(showAuthorization(false));

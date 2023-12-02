@@ -1,32 +1,25 @@
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import s from './style.module.scss';
-import cn from "classnames";
+import cn from 'classnames';
 // import Icon from '../ui/Icon/Icon';
 import FormRegister from './forms/FormRegister';
 
 function Register({changeAuthorizationForm}) {
-
 	return (
 		<>
-			<h3 className={s.auth__title}>РЕГИСТРАЦИЯ</h3>
-			<FormRegister type="register" style={s.form} inputStyle={s.form__input} />
-			<p className={s.auth__text}>или продолжить через:</p>
-			<div className={cn(s.auth__social, s.social)}>
-				<Link to="#">
-					{/* <Icon className={s.social__img} iconPath="VK" alt="VK" /> */}
-				</Link>
-				<Link to="#">
-					{/* <Icon className={s.social__img} iconPath="Yandex" alt="Yandex" /> */}
-				</Link>
-				<Link to="#">
-					{/* <Icon className={s.social__img} iconPath="Google" alt="Google" /> */}
-				</Link>
+			<div className={s.auth__info}>
+				<div className={s.auth__title}>Sign in to in Cryptocaps</div>
+				<div className={s.auth__description}>
+					By signing up to Cryptocaps, you agree to Terms of Service and Privacy Policy
+				</div>
 			</div>
-			<p className={s.auth__text}>У Вас уже есть аккаунт?</p>
-			<button className={s.auth__btn}
-				onClick={() => changeAuthorizationForm(true)}>Войти</button>
+			<FormRegister type='register' style={s.form} inputStyle={s.form__input} />
+
+			<button className={s.auth__btn} onClick={() => changeAuthorizationForm(true)}>
+				Log in
+			</button>
 		</>
 	);
-};
+}
 
 export default Register;
