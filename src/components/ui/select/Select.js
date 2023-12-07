@@ -6,7 +6,6 @@ export default function CustomSelect(props) {
 	return(
 			<Select
 				classNamePrefix={s.select}
-				// className={cn(s.select)}
 				getOptionValue={(option) => `${option[props.selectValue ?? 'value']}`}
 				getOptionLabel={(option) => `${option[props.selectLabel ?? 'label']}`}
 				noOptionsMessage={() => props.noOptionsMessage || 'Ops! It\'s empty...'}
@@ -20,8 +19,6 @@ export default function CustomSelect(props) {
 				isDisabled={props.isDisabled}
 				isClearable={props.isClearable}
 				{...props}
-				// menuIsOpen={true}
-				// isMulti
 			/>
 
 	)

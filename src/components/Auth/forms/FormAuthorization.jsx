@@ -1,20 +1,17 @@
 import React from 'react';
 import s from './style.module.scss';
 import Input from '../../ui/Input/Input';
-import {Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import Button from '../../ui/buttons/Button/Button';
-import CheckboxGroup from '../../ui/Checkbox/Checkbox';
 import {Discord, Telegram, Twitter} from '../../profile/Accounts/Accounts';
 import {
 	showAuthorization,
-	statePopupWindow,
 } from '../../../core/store/slices/windowStateSlice';
 
 const FormAuthorization = ({}) => {
 	const dispatch = useDispatch();
-	const {register, setValue, handleSubmit, watch} = useForm({
+	const {register, setValue, handleSubmit} = useForm({
 		mode: 'all',
 		defaultValues: {
 			isRemember: false,
@@ -34,8 +31,6 @@ const FormAuthorization = ({}) => {
 		setTimeout(() => {
 			dispatch(showAuthorization(false));
 		}, 500);
-		// window.location.assign('/')
-		// window.location.href = '/';
 	};
 
 	return (

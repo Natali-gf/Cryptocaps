@@ -1,7 +1,4 @@
-import {Link} from 'react-router-dom';
 import s from './style.module.scss';
-import cn from 'classnames';
-// import Icon from '../ui/Icon/Icon';
 import FormRegister from './forms/FormRegister';
 
 function Register({changeAuthorizationForm}) {

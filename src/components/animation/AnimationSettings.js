@@ -25,43 +25,6 @@ export default function AnimationSettings() {
 			amplitude = 0.7;
 			frequency = 0.6;
 		}
-		//*green
-		// let scale = 1/5
-		// let octaves = 40
-		// let persistence = .7
-		// let lacunarity = 0.8
-		// let amplitude = .6
-		// let frequency = .8
-		//*green
-		// let scale = 1/5
-		// let octaves = 40
-		// let persistence = .7
-		// let lacunarity = 0.8
-		// let amplitude = .6
-		// let frequency = .8
-
-		//*try
-		// let scale = 1 / 5;
-		// let octaves = 40;
-		// let persistence = 0.3;
-		// let lacunarity = 0.6;
-		// let amplitude = 0.7;
-		// let frequency = 0.6;
-		//*dark
-		// let scale = 1 / 5;
-		// let octaves = theme === 'dark' ? 50 : 40;
-		// let persistence = theme === 'dark' ? 0.7 : 0.3 ;
-		// let lacunarity = theme === 'dark' ? 0.8 : 0.3;
-		// let amplitude = theme === 'dark' ? 0.7 : 0.7;
-		// let frequency = theme === 'dark' ? 0.6 : 0.6;
-
-		//*light
-		// let scale = 1/6
-		// let octaves = 20
-		// let persistence = .5
-		// let lacunarity = 2
-		// let amplitude = .6
-		// let frequency = .8
 
 		let v = 0;
 		for (let i = 0; i < octaves; i++) {
@@ -93,24 +56,6 @@ export default function AnimationSettings() {
 				b: z,
 			}
 		}
-		// return {
-			//*try
-			// r: z / 1.2,
-			// g: z / .4,
-			// b: z,
-			//*dark
-			// r: theme === 'dark' ? z / 1.1 : z / 1.2,
-			// g: theme === 'dark' ? z / 1.5 : z / .4 ,
-			// b: theme === 'dark' ? z / 0.5 : z,
-			//*green
-			// r: z+.8,
-			// g: z+.5,
-			// b: z+1.2
-			//*light
-			// r: z+.8,
-			// g: z+.45,
-			// b: z+1.2
-		// };
 	};
 
 	return (

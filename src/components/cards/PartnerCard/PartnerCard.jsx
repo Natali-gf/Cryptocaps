@@ -2,7 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
 import {Link} from 'react-router-dom';
-import Experience from '../../ui/tags/Experience/Experience';
 import BorderTag from '../../ui/tags/BorderTag/BorderTag';
 import SubscribeButton from '../../ui/buttons/SubscribeButton/SubscribeButton';
 

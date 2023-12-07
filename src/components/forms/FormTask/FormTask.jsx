@@ -30,7 +30,6 @@ export const taskFormFields = [
 
 function FormTask() {
 	const dispatch = useDispatch();
-	// const { filmData, errorView } = useSelector(state => state.films);
 	const [fieldKeyWords, setFieldKeyWords] = React.useState(false);
 	const [fieldNft, setFieldNft] = React.useState(false);
 	const [fieldImg, setFieldImg] = React.useState(false);
@@ -40,24 +39,11 @@ function FormTask() {
 		handleSubmit,
 		setValue,
 		setError,
-		getValues,
-		formState: {errors, isDirty, isValidating},
-		watch,
+		formState: {isValidating},
 	} = useForm({mode: 'all'});
-	// const [nameWatch, durationWatch, yearWatch] = watch(filmFormFields);
 
 	React.useEffect(() => {
 		// register fields
-		// register('card_task', {required: 'Обязательное поле!'});
-		// register('level', {required: 'Обязательное поле!'});
-		// register('category', {required: 'Обязательное поле!'});
-		// register('type', {required: 'Обязательное поле!'});
-		// register('end_date', {required: 'Обязательное поле!'});
-		// register('end_time', {required: 'Обязательное поле!'});
-		// register('award', {required: 'Обязательное поле!'});
-		// register('website', {required: 'Обязательное поле!'});
-		// register('status', {required: 'Обязательное поле!'});
-		// register('image');
 	}, []);
 
 	React.useEffect(() => {}, [isValidating]);
@@ -144,7 +130,6 @@ function FormTask() {
 							patternChar='#'
 							allowFormatting
 							mask='_ '
-							// value={durationWatch}
 							onValueChange={(values) => {
 								setValue('startDate', values.formattedValue);
 								setError('startDate', {
@@ -163,7 +148,6 @@ function FormTask() {
 							patternChar='#'
 							allowFormatting
 							mask='_ '
-							// value={durationWatch}
 							onValueChange={(values) => {
 								setValue('startTime', values.formattedValue);
 								setError('startTime', {
@@ -197,7 +181,6 @@ function FormTask() {
 							patternChar='#'
 							allowFormatting
 							mask='_ '
-							// value={durationWatch}
 							onValueChange={(values) => {
 								setValue('endDate', values.formattedValue);
 								setError('endDate', {
@@ -216,7 +199,6 @@ function FormTask() {
 							patternChar='#'
 							allowFormatting
 							mask='_ '
-							// value={durationWatch}
 							onValueChange={(values) => {
 								setValue('endTime', values.formattedValue);
 								setError('endTime', {

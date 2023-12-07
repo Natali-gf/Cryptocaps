@@ -2,8 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import s from './style.module.scss';
 import QuestCard from '../../QuestCard/QuestCard';
-import {useDispatch} from 'react-redux';
-import {setQuestId} from '../../../../core/store/slices/questSlise';
 import Button from '../../../ui/buttons/Button/Button';
 import BorderBlock from '../../../ui/tags/BorderBlock/BorderBlock';
 import BorderTag from '../../../ui/tags/BorderTag/BorderTag';

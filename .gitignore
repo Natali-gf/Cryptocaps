@@ -25,7 +25,7 @@ yarn-error.log*
 #firebase
 firebase.json
 .firebaserc
-.firebase
+/.firebase
 
 #my files
 notice.md

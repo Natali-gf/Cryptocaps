@@ -10,7 +10,7 @@ import {generateData} from './temporaryData/generateData';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-generateData()
+// generateData()
 root.render(
 	<Provider store={store}>
 		<BrowserRouter>

@@ -5,7 +5,6 @@ import BorderBlock from '../tags/BorderBlock/BorderBlock';
 
 export default function Filters({placeholder, isAdmin}) {
 	const dispatch = useDispatch();
-	// const {searchValue} = useSelector((state) => state.search);
 
 	return (
 		<BorderBlock className={cn(s.filters)}>

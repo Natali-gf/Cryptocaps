@@ -1,6 +1,5 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import quest from './slices/questSlise';
-import filters from './slices/filtersSlice';
 import user from './slices/user';
 import statePopupWindow from './slices/windowStateSlice';
 import {userApi} from './services/userApi';

@@ -3,7 +3,6 @@ import cn from 'classnames';
 import logo from '../../../assets/images/logo.png';
 import Button from '../../ui/buttons/Button/Button';
 import NavigationLink from '../../ui/Navlink/Navlink';
-import ThemeSwitch from '../../ThemeSwitch/ThemeSwitch';
 import BorderBlock from '../../ui/tags/BorderBlock/BorderBlock';
 import {Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
@@ -61,7 +60,6 @@ export default function Header({className}) {
 								{item.title}
 								<BorderBlock className={cn(s.navigation__submenu, s.submenu)}>
 									{item.submenu.map((item, idx) => (
-										// <li className={s.submenu__item} key={idx}>
 										<NavigationLink
 											className={cn(s.submenu__link, 'icon_arrow_towards')}
 											key={idx}
@@ -69,7 +67,6 @@ export default function Header({className}) {
 											to={item.link}>
 											{item.title}
 										</NavigationLink>
-										// </li>
 									))}
 								</BorderBlock>
 							</li>

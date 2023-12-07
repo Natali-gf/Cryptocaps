@@ -5,7 +5,6 @@ import {questsApi} from '../../../core/store/services/questsApi';
 import {userApi} from '../../../core/store/services/userApi';
 import {useLocation} from 'react-router-dom';
 import Experience from '../../../components/ui/tags/Experience/Experience';
-import SubscribeButton from '../../../components/ui/buttons/SubscribeButton/SubscribeButton';
 import ChainType from '../../../components/ui/tags/ChainType/ChainType';
 import Difficulty from '../../../components/ui/tags/Difficulty/Difficulty';
 import RewardType from '../../../components/ui/tags/RewardType/RewardType';
@@ -54,7 +53,6 @@ function QuestsDetailPage() {
 			setPartner(partnerById[0]);
 		}
 	}, [partnerById]);
-	// console.log(user)
 	React.useEffect(() => {
 		if (user) {
 			console.log(user);
@@ -66,7 +64,7 @@ function QuestsDetailPage() {
 			});
 		}
 	}, [user]);
-	// console.log(currentUserQuest)
+
 	return (
 		<>
 			{quest && (
@@ -84,7 +82,6 @@ function QuestsDetailPage() {
 								</div>
 								{partner && <div className={cn(s.company__name)}>{partner.name}</div>}
 							</div>
-							{/* <SubscribeButton className={s.quest__subs} isSubscribed={false} /> */}
 							<Experience className={s.quest__xp} children={quest.awards.xp} />
 						</div>
 						<div className={s.info}>

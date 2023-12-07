@@ -2,7 +2,6 @@ import React from 'react';
 import s from './style.module.scss';
 import cn from 'classnames';
 import {Link} from 'react-router-dom';
-import star from "../../../assets/icons/star.svg";
 
 function AboutSteps({className}) {
 	return (

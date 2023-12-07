@@ -1,5 +1,4 @@
 import React from 'react';
-import cn from 'classnames';
 import s from './style.module.scss';
 import Sidebar from '../../Sidebar/Sidebar';
 import {Outlet} from 'react-router-dom';

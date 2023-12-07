@@ -1,5 +1,4 @@
 import s from './style.module.scss';
-import cn from 'classnames';
 import Search from '../ui/Search/Search';
 import Filters from '../ui/Filters/Filters';
 

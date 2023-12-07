@@ -5,11 +5,10 @@ import {useDispatch} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import { showAuthorization } from '../../../core/store/slices/windowStateSlice';
 import Button from '../../ui/buttons/Button/Button';
-// import { registrationRequest } from "../../../store/actions/authorizationAction";
 
 function FormRegister() {
 	const dispatch = useDispatch();
-	const {register, setValue, handleSubmit, watch} = useForm({
+	const {register, setValue, handleSubmit} = useForm({
 		mode: 'all',
 		defaultValues: {
 			isRemember: false,
